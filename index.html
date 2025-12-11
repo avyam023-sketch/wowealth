@@ -1028,6 +1028,32 @@
             });
         });
 
+        
+        // Logo and Home link - scroll to top if already on home page
+        const currentPage = window.location.pathname.split('/').pop().toLowerCase();
+        const isHomePage = currentPage === 'index.html' || currentPage === '' || currentPage.includes('index');
+        
+        const logoLink = document.querySelector('.logo');
+        const homeLink = document.querySelector('nav a[href*="Index.html#home"], nav a[href*="index.html#home"]');
+        
+        function handleHomeClick(e) {
+            if (isHomePage) {
+                e.preventDefault();
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+                // Optional: reload page to reset state
+                // window.location.reload();
+            }
+        }
+        
+        if (logoLink) {
+            logoLink.addEventListener('click', handleHomeClick);
+        }
+        
+        if (homeLink) {
+            homeLink.addEventListener('click', handleHomeClick);
+        }
+
+
         // Simple analytics event
         console.log('Financial Services Website Loaded');
 
