@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
-    <meta name="description" content="Comprehensive financial services including loans, mutual funds, and insurance solutions from Wowealth.">
-    <meta name="keywords" content="loans, mutual funds, insurance, financial advisor, investment planning">
+    <meta name="description" content="Why choose Wowealth? Discover our commitment to exceptional financial solutions, expert guidance, and personalized service.">
+    <meta name="keywords" content="why choose us, financial services, expert advisors, Wowealth, financial solutions">
     <meta name="author" content="Wowealth">
     
     <!-- iOS Safari Meta Tags -->
@@ -17,7 +17,7 @@
     <meta name="theme-color" content="#1e293b">
     <meta name="mobile-web-app-capable" content="yes">
     
-    <title>Our Services - Wowealth Financial Solutions</title>
+    <title>Why Choose Us - Wowealth Financial Solutions</title>
     <link rel="icon" type="image/png" href="Wowealth logo.png">
     <link rel="apple-touch-icon" href="Wowealth logo.png">
     
@@ -279,47 +279,6 @@
             background-color: #059669;
         }
 
-        /* WhatsApp Floating Button */
-        .whatsapp-float {
-            position: fixed;
-            bottom: 20px;
-            right: 20px;
-            width: 56px;
-            height: 56px;
-            border-radius: 50%;
-            background: #25D366;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-            z-index: 1200;
-            transition: transform 0.2s ease, box-shadow 0.2s ease;
-        }
-
-        .whatsapp-float:hover {
-            transform: translateY(-2px) scale(1.05);
-            box-shadow: 0 6px 16px rgba(0, 0, 0, 0.25);
-        }
-
-        .whatsapp-float img {
-            width: 30px;
-            height: 30px;
-        }
-
-        @media (max-width: 768px) {
-            .whatsapp-float {
-                width: 50px;
-                height: 50px;
-                bottom: 16px;
-                right: 16px;
-            }
-
-            .whatsapp-float img {
-                width: 26px;
-                height: 26px;
-            }
-        }
-
         /* Page Header */
         .page-header {
             position: relative;
@@ -336,6 +295,7 @@
             display: flex;
             align-items: center;
             justify-content: center;
+            flex-direction: column;
         }
 
         .page-header::before {
@@ -365,123 +325,30 @@
             opacity: 0.9;
         }
 
-        /* Tab Navigation */
-        .tabs {
+        /* Why Us Section */
+        .why-us-section {
             max-width: 1200px;
             margin: 3rem auto;
             padding: 0 1rem;
         }
 
-        .tab-buttons {
-            display: flex;
-            gap: 1rem;
-            margin-bottom: 2rem;
-            flex-wrap: wrap;
-            border-bottom: 2px solid var(--border-color);
+        .why-us-intro {
+            text-align: center;
+            margin-bottom: 4rem;
         }
 
-        .tab-button {
-            background: none;
-            border: none;
-            font-size: 1.1rem;
-            font-weight: 600;
+        .why-us-intro h2 {
+            color: var(--primary-color);
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .why-us-intro p {
             color: var(--text-light);
-            cursor: pointer;
-            padding: 1rem 1.5rem;
-            position: relative;
-            transition: color 0.3s;
-        }
-
-        .tab-button.active {
-            color: var(--primary-color);
-        }
-
-        .tab-button.active::after {
-            content: '';
-            position: absolute;
-            bottom: -2px;
-            left: 0;
-            right: 0;
-            height: 2px;
-            background-color: var(--primary-color);
-        }
-
-        .tab-button:hover {
-            color: var(--primary-color);
-        }
-
-        .tab-content {
-            display: none;
-            animation: fadeIn 0.3s ease;
-        }
-
-        .tab-content.active {
-            display: block;
-        }
-
-        @keyframes fadeIn {
-            from {
-                opacity: 0;
-                transform: translateY(10px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        @keyframes fadeInDown {
-            from {
-                opacity: 0;
-                transform: translateY(-30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        @keyframes scaleIn {
-            from {
-                opacity: 0;
-                transform: scale(0.9);
-            }
-            to {
-                opacity: 1;
-                transform: scale(1);
-            }
-        }
-
-        /* Scroll-triggered animations */
-        .animate-on-scroll {
-            opacity: 0;
-            transform: translateY(30px);
-            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
-        }
-
-        .animate-on-scroll.animated {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-        /* Page header animations */
-        .page-header h1 {
-            animation: fadeInDown 1s ease-out 0.3s both;
-        }
-
-        .page-header p {
-            animation: fadeInUp 1s ease-out 0.5s both;
+            font-size: 1.1rem;
+            max-width: 700px;
+            margin: 0 auto;
+            line-height: 1.8;
         }
 
         /* Service Cards */
@@ -490,7 +357,6 @@
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 2rem;
             margin: 2rem 0;
-            align-items: stretch;
         }
 
         .card {
@@ -502,9 +368,6 @@
             transition: transform 0.3s, box-shadow 0.3s;
             opacity: 0;
             transform: translateY(30px);
-            display: flex;
-            flex-direction: column;
-            height: 100%;
         }
 
         .card.animated {
@@ -537,59 +400,87 @@
         .card p {
             color: var(--text-light);
             margin-bottom: 1.5rem;
+            line-height: 1.6;
         }
 
-        .card-features {
-            text-align: left;
-            margin: 1.5rem 0;
-            flex-grow: 1;
+        /* Benefits Section */
+        .benefits-section {
+            background: var(--bg-light);
+            padding: 4rem 1rem;
+            margin-top: 3rem;
         }
 
-        .card .btn,
-        .card a.btn {
-            margin-top: auto;
-            align-self: center;
+        .benefits-container {
+            max-width: 1200px;
+            margin: 0 auto;
         }
 
-        .card-features li {
-            list-style: none;
-            padding: 0.5rem 0;
-            color: var(--text-light);
+        .benefits-section h2 {
+            text-align: center;
+            color: var(--primary-color);
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
         }
 
-        .card-features li:before {
-            content: "✓ ";
-            color: var(--success-color);
-            font-weight: bold;
-            margin-right: 0.5rem;
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
         }
 
-        .btn {
-            padding: 1rem 2rem;
-            font-size: 1rem;
-            font-weight: 600;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
+        .benefit-item {
+            background: white;
+            padding: 2rem;
+            border-radius: 8px;
+            border-left: 4px solid var(--success-color);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
             transition: transform 0.3s, box-shadow 0.3s;
-            text-decoration: none;
-            display: inline-block;
-            -webkit-tap-highlight-color: transparent;
-            touch-action: manipulation;
-            -webkit-appearance: none;
-            -moz-appearance: none;
-            appearance: none;
         }
 
-        .btn-primary {
-            background-color: var(--success-color);
-            color: white;
+        .benefit-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(30, 41, 59, 0.15);
         }
 
-        .btn-primary:hover {
-            background-color: #059669;
-            transform: translateY(-2px);
-            box-shadow: 0 4px 12px rgba(16, 185, 129, 0.3);
+        .benefit-item h3 {
+            color: var(--primary-color);
+            margin-bottom: 0.5rem;
+            font-size: 1.3rem;
+        }
+
+        .benefit-item p {
+            color: var(--text-light);
+            line-height: 1.6;
+        }
+
+        /* Stats Section */
+        .stats-section {
+            max-width: 1200px;
+            margin: 3rem auto;
+            padding: 0 1rem;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            text-align: center;
+        }
+
+        .stat-item {
+            padding: 2rem;
+        }
+
+        .stat-number {
+            font-size: 3rem;
+            font-weight: bold;
+            color: var(--success-color);
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-label {
+            color: var(--text-light);
+            font-size: 1.1rem;
         }
 
         /* Footer */
@@ -633,6 +524,91 @@
             color: #999;
         }
 
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Scroll-triggered animations */
+        .animate-on-scroll {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+        }
+
+        .animate-on-scroll.animated {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Page header animations */
+        .page-header h1 {
+            animation: fadeInDown 1s ease-out 0.3s both;
+        }
+
+        .page-header p {
+            animation: fadeInUp 1s ease-out 0.5s both;
+        }
+
+        /* WhatsApp Floating Button */
+        .whatsapp-float {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            width: 56px;
+            height: 56px;
+            border-radius: 50%;
+            background: #25D366;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+            z-index: 1200;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .whatsapp-float:hover {
+            transform: translateY(-2px) scale(1.05);
+            box-shadow: 0 6px 16px rgba(0, 0, 0, 0.25);
+        }
+
+        .whatsapp-float img {
+            width: 30px;
+            height: 30px;
+        }
+
+        @media (max-width: 768px) {
+            .whatsapp-float {
+                width: 50px;
+                height: 50px;
+                bottom: 16px;
+                right: 16px;
+            }
+
+            .whatsapp-float img {
+                width: 26px;
+                height: 26px;
+            }
+        }
+
         /* Responsive */
         @media (max-width: 768px) {
             .page-header {
@@ -650,6 +626,10 @@
                 font-size: 1rem;
             }
 
+            .why-us-intro h2 {
+                font-size: 2rem;
+            }
+
             nav {
                 display: none;
             }
@@ -661,11 +641,6 @@
             .mobile-menu {
                 display: block;
             }
-
-            .tab-button {
-                padding: 0.8rem 1rem;
-                font-size: 0.95rem;
-            }
         }
     </style>
 </head>
@@ -673,7 +648,7 @@
     <!-- Header -->
     <header>
         <div class="nav-container">
-                <a href="index.html" class="logo">
+            <a href="index.html" class="logo">
                 <img src="Wowealth logo.png" alt="Wowealth Logo">
                 <span>Wowealth</span>
             </a>
@@ -728,214 +703,113 @@
 
     <!-- Page Header -->
     <section class="page-header">
-        <h1>Our Services</h1>
-        <p>Comprehensive financial solutions tailored to your needs</p>
+        <h1>Why Choose Wowealth?</h1>
+        <p>Your trusted partner for exceptional financial solutions</p>
     </section>
 
-    <!-- Services Section -->
-    <section class="tabs">
-        <div class="tab-buttons">
-            <button class="tab-button active" onclick="switchTab('loans')">🏦 Loans</button>
-            <button class="tab-button" onclick="switchTab('mutual-funds')">📈 Mutual Funds</button>
-            <button class="tab-button" onclick="switchTab('insurance')">🛡️ Insurance</button>
+    <!-- Why Us Section -->
+    <section class="why-us-section">
+        <div class="why-us-intro">
+            <h2>Why Choose Wowealth?</h2>
+            <p>
+                We are committed to providing exceptional financial solutions with personalized service and expert guidance. 
+                Our team of certified professionals is dedicated to helping you achieve your financial goals through 
+                comprehensive services tailored to your unique needs.
+            </p>
         </div>
+        
+        <div class="service-cards">
+            <div class="card">
+                <div class="card-icon">👥</div>
+                <h3>Expert Advisors</h3>
+                <p>Our team of certified financial advisors brings years of experience to help you make informed decisions. We stay updated with the latest market trends and financial products to serve you better.</p>
+            </div>
 
-        <!-- Loans Tab -->
-        <div id="loans" class="tab-content active">
-            <div class="service-cards">
-                <div class="card">
-                    <div class="card-icon">🏢</div>
-                    <h3>LAP (Loan Against Property)</h3>
-                    <p>Unlock the value of your property with flexible loan against property solutions for business and personal needs.</p>
-                    <ul class="card-features">
-                        <li>Loan up to 75% of property value</li>
-                        <li>Competitive interest rates</li>
-                        <li>Flexible repayment options</li>
-                        <li>Quick processing and disbursement</li>
-                    </ul>
-                    <a href="contact.html" class="btn btn-primary">Get Started</a>
+            <div class="card">
+                <div class="card-icon">⚡</div>
+                <h3>Quick Processing</h3>
+                <p>Fast approval and disbursement processes to ensure you get the financial support you need when you need it. We streamline our operations for maximum efficiency.</p>
+            </div>
+
+            <div class="card">
+                <div class="card-icon">🎯</div>
+                <h3>Personalized Solutions</h3>
+                <p>Tailored financial products and services designed to meet your unique needs and goals. We understand that every client is different, and we customize our approach accordingly.</p>
+            </div>
+
+            <div class="card">
+                <div class="card-icon">🔒</div>
+                <h3>Trusted & Secure</h3>
+                <p>Your financial security is our priority. We maintain the highest standards of data protection and confidentiality. Your information is safe with us.</p>
+            </div>
+
+            <div class="card">
+                <div class="card-icon">💰</div>
+                <h3>Competitive Rates</h3>
+                <p>Best-in-market interest rates and fees to ensure you get the most value from our services. We negotiate the best deals on your behalf.</p>
+            </div>
+
+            <div class="card">
+                <div class="card-icon">🤝</div>
+                <h3>Long-term Partnership</h3>
+                <p>We build lasting relationships with our clients, providing ongoing support and guidance throughout your financial journey. Your success is our success.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Benefits Section -->
+    <section class="benefits-section">
+        <div class="benefits-container">
+            <h2>What Sets Us Apart</h2>
+            <div class="benefits-grid">
+                <div class="benefit-item">
+                    <h3>360-Degree Coverage</h3>
+                    <p>We provide comprehensive financial solutions under one roof - from loans and mutual funds to insurance, ensuring all your financial needs are met.</p>
                 </div>
-
-                <div class="card">
-                    <div class="card-icon">💳</div>
-                    <h3>CC/OD Limits</h3>
-                    <p>Flexible working capital solutions through Cash Credit and Overdraft facilities to manage your business cash flow.</p>
-                    <ul class="card-features">
-                        <li>Flexible withdrawal and repayment</li>
-                        <li>Interest only on amount utilized</li>
-                        <li>Quick approval process</li>
-                        <li>Renewable credit limits</li>
-                    </ul>
-                    <a href="contact.html" class="btn btn-primary">Get Started</a>
+                <div class="benefit-item">
+                    <h3>Tax-Saving Solutions</h3>
+                    <p>Our range of products and services is aligned with effective tax-saving solutions, helping you maximize your savings while building wealth.</p>
                 </div>
-
-                <div class="card">
-                    <div class="card-icon">🛡️</div>
-                    <h3>CGTMSE</h3>
-                    <p>Credit Guarantee Fund Trust for Micro and Small Enterprises - Government-backed loan guarantee scheme for MSMEs.</p>
-                    <ul class="card-features">
-                        <li>No collateral required</li>
-                        <li>Up to ₹2 crores coverage</li>
-                        <li>Government guarantee support</li>
-                        <li>Easy eligibility criteria</li>
-                    </ul>
-                    <a href="contact.html" class="btn btn-primary">Get Started</a>
+                <div class="benefit-item">
+                    <h3>Wealth Maximization</h3>
+                    <p>We work toward the goal of wealth maximization for our clients, helping your hard-earned money grow into lasting wealth.</p>
                 </div>
-
-                <div class="card">
-                    <div class="card-icon">🏡</div>
-                    <h3>Home Loans</h3>
-                    <p>Affordable home financing solutions with competitive interest rates and flexible repayment terms.</p>
-                    <ul class="card-features">
-                        <li>Rates from 7.5% p.a.</li>
-                        <li>Tenure up to 30 years</li>
-                        <li>Quick approval process</li>
-                    </ul>
-                    <a href="contact.html" class="btn btn-primary">Get Started</a>
+                <div class="benefit-item">
+                    <h3>Financial Literacy</h3>
+                    <p>We believe in empowering our clients with financial knowledge, helping you make informed decisions and achieve financial independence.</p>
                 </div>
-
-                <div class="card">
-                    <div class="card-icon">🚗</div>
-                    <h3>Auto Loans</h3>
-                    <p>Finance your dream vehicle with hassle-free auto loan options for new and used cars.</p>
-                    <ul class="card-features">
-                        <li>Up to 100% financing</li>
-                        <li>Instant approval</li>
-                        <li>Flexible tenure</li>
-                        <li>No hidden charges</li>
-                    </ul>
-                    <a href="contact.html" class="btn btn-primary">Get Started</a>
+                <div class="benefit-item">
+                    <h3>Proven Track Record</h3>
+                    <p>With years of experience in the financial services industry, we have a proven track record of helping clients achieve their financial goals.</p>
                 </div>
-
-                <div class="card">
-                    <div class="card-icon">🏭</div>
-                    <h3>Business Loans</h3>
-                    <p>Comprehensive business financing solutions to fuel your business growth and expansion plans.</p>
-                    <ul class="card-features">
-                        <li>Competitive interest rates</li>
-                        <li>Flexible tenure options</li>
-                        <li>Minimal documentation</li>
-                    </ul>
-                    <a href="contact.html" class="btn btn-primary">Get Started</a>
-                </div>
-
-                <div class="card">
-                    <div class="card-icon">💼</div>
-                    <h3>Personal Loans</h3>
-                    <p>Quick personal loans for all your needs with minimal documentation and fast disbursement.</p>
-                    <ul class="card-features">
-                        <li>Loan up to ₹25 lakhs</li>
-                        <li>No collateral needed</li>
-                        <li>Minimal documentation</li>
-                    </ul>
-                    <a href="contact.html" class="btn btn-primary">Get Started</a>
+                <div class="benefit-item">
+                    <h3>Client-Centric Approach</h3>
+                    <p>Your financial success is our priority. We listen, understand, and deliver solutions tailored to your unique needs and circumstances.</p>
                 </div>
             </div>
         </div>
+    </section>
 
-        <!-- Mutual Funds Tab -->
-        <div id="mutual-funds" class="tab-content">
-            <div class="service-cards">
-                <div class="card">
-                    <div class="card-icon">📊</div>
-                    <h3>Equity Mutual Funds</h3>
-                    <p>Invest in growth-oriented equity funds designed for wealth creation over the long term.</p>
-                    <ul class="card-features">
-                        <li>Diversified portfolio</li>
-                        <li>Tax-efficient investing</li>
-                        <li>Professional management</li>
-                    </ul>
-                    <a href="contact.html" class="btn btn-primary">Start Investing</a>
-                </div>
-
-                <div class="card">
-                    <div class="card-icon">💵</div>
-                    <h3>Debt Mutual Funds</h3>
-                    <p>Stable income-generating investments through bonds and debt securities for conservative investors.</p>
-                    <ul class="card-features">
-                        <li>Regular income stream</li>
-                        <li>Lower volatility</li>
-                        <li>Capital preservation</li>
-                        <li>Attractive yields</li>
-                    </ul>
-                    <a href="contact.html" class="btn btn-primary">Start Investing</a>
-                </div>
-
-                <div class="card">
-                    <div class="card-icon">⚖️</div>
-                    <h3>Hybrid Mutual Funds</h3>
-                    <p>Balanced mix of equity and debt for investors seeking growth with moderate risk.</p>
-                    <ul class="card-features">
-                        <li>Risk-adjusted returns</li>
-                        <li>Optimal asset allocation</li>
-                        <li>Quarterly rebalancing</li>
-                        <li>Suitable for all ages</li>
-                    </ul>
-                    <a href="contact.html" class="btn btn-primary">Start Investing</a>
-                </div>
-
-                <div class="card">
-                    <div class="card-icon">🎯</div>
-                    <h3>Solution Oriented Schemes</h3>
-                    <p>Goal-based investment schemes designed to help you achieve specific financial objectives with targeted strategies.</p>
-                    <ul class="card-features">
-                        <li>Goal-specific planning</li>
-                        <li>Long-term wealth creation</li>
-                        <li>Structured investment approach</li>
-                        <li>Tax-efficient solutions</li>
-                    </ul>
-                    <a href="contact.html" class="btn btn-primary">Start Investing</a>
-                </div>
-
+    <!-- Stats Section -->
+    <section class="stats-section">
+        <div class="stats-grid">
+            <div class="stat-item">
+                <div class="stat-number">7+</div>
+                <div class="stat-label">Years of Experience</div>
             </div>
-        </div>
-
-        <!-- Insurance Tab -->
-        <div id="insurance" class="tab-content">
-            <div class="service-cards">
-                <div class="card">
-                    <div class="card-icon">❤️</div>
-                    <h3>Life Insurance</h3>
-                    <p>Comprehensive life insurance plans to protect your family's financial future with flexible options.</p>
-                    <ul class="card-features">
-                        <li>Term & whole life plans</li>
-                        <li>Coverage up to 5 crores</li>
-                        <li>Quick claim settlement</li>
-                        <li>Affordable premiums</li>
-                    </ul>
-                    <a href="contact.html" class="btn btn-primary">Contact Us</a>
-                </div>
-
-                <div class="card">
-                    <div class="card-icon">🏥</div>
-                    <h3>Health Insurance</h3>
-                    <p>Comprehensive health coverage to ensure quality healthcare without financial burden.</p>
-                    <ul class="card-features">
-                        <li>Cashless treatment</li>
-                        <li>Network of 5000+ hospitals</li>
-                        <li>Pre-existing conditions</li>
-                        <li>Family coverage plans</li>
-                    </ul>
-                    <a href="contact.html" class="btn btn-primary">Contact Us</a>
-                </div>
-
-                <div class="card">
-                    <div class="card-icon">🚗</div>
-                    <h3>General Insurance</h3>
-                    <p>Protect your valuable assets including vehicles, home, and property with comprehensive coverage.</p>
-                    <ul class="card-features">
-                        <li>Vehicle insurance</li>
-                        <li>Home insurance</li>
-                        <li>Travel insurance</li>
-                    </ul>
-                    <a href="contact.html" class="btn btn-primary">Contact Us</a>
-                </div>
+            <div class="stat-item">
+                <div class="stat-number">1000+</div>
+                <div class="stat-label">Happy Clients</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number">360°</div>
+                <div class="stat-label">Financial Coverage</div>
             </div>
         </div>
     </section>
 
     <!-- WhatsApp Floating Button -->
-    <a href="https://wa.me/918054516988" class="whatsapp-float" aria-label="Chat on WhatsApp" target="_blank" rel="noopener">
+    <a href="https://wa.me/918054516988?text=Hi%20Wowealth%2C%20I%27d%20like%20to%20learn%20more%20about%20your%20services." class="whatsapp-float" aria-label="Chat on WhatsApp" target="_blank" rel="noopener">
         <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp">
     </a>
 
@@ -975,23 +849,6 @@
     </footer>
 
     <script>
-        // Tab switching functionality
-        function switchTab(tabName) {
-            // Hide all tabs
-            const tabs = document.querySelectorAll('.tab-content');
-            tabs.forEach(tab => tab.classList.remove('active'));
-
-            // Remove active class from all buttons
-            const buttons = document.querySelectorAll('.tab-button');
-            buttons.forEach(btn => btn.classList.remove('active'));
-
-            // Show selected tab
-            document.getElementById(tabName).classList.add('active');
-
-            // Add active class to clicked button
-            event.target.classList.add('active');
-        }
-
         // Navbar scroll behavior
         let lastScroll = 0;
         const header = document.querySelector('header');
@@ -1057,7 +914,7 @@
             link.addEventListener('click', closeMobileMenu);
         });
 
-        // Close menu when clicking outside the content (Bug 2 fix)
+        // Close menu when clicking outside the content
         if (mobileMenu && mobileMenuContent) {
             mobileMenu.addEventListener('click', function(e) {
                 // Check if click is NOT on mobile-menu-content or its children
@@ -1090,10 +947,15 @@
         // Observe all cards and sections
         document.addEventListener('DOMContentLoaded', () => {
             const cards = document.querySelectorAll('.card');
+            const benefitItems = document.querySelectorAll('.benefit-item');
             const sections = document.querySelectorAll('section');
             
             cards.forEach(card => {
                 observer.observe(card);
+            });
+
+            benefitItems.forEach(item => {
+                observer.observe(item);
             });
 
             sections.forEach(section => {
