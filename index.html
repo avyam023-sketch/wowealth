@@ -374,10 +374,10 @@
             top: 0;
             left: 0;
             width: 100%;
-            height: 100%;
+            height: 100%;`n                min-width: 100%;`n                min-height: 100%;`n                object-fit: cover;`n                object-position: center center;`n                -webkit-transform: translateZ(0) scale(1.1);`n                transform: translateZ(0) scale(1.1);
             object-fit: cover;
             object-position: center;
-            z-index: 0;
+            z-index: 0;`n            pointer-events: none;`n            -webkit-transform: translateZ(0);`n            transform: translateZ(0);`n            -webkit-backface-visibility: hidden;`n            backface-visibility: hidden;
         }
 
         .hero::before {
@@ -840,7 +840,7 @@
         /* Responsive */
         @media (max-width: 768px) {
             .hero {
-                padding: 5rem 1.25rem;
+                padding: 5rem 1.25rem;`n                min-height: 100vh;`n                min-height: 100dvh;`n                overflow: hidden;`n                position: relative;
             }
 
             .hero h1 {
@@ -853,7 +853,7 @@
 
             .hero-video {
                 width: 100%;
-                height: 100%;
+                height: 100%;`n                min-width: 100%;`n                min-height: 100%;`n                object-fit: cover;`n                object-position: center center;`n                -webkit-transform: translateZ(0) scale(1.1);`n                transform: translateZ(0) scale(1.1);
             }
 
             nav {
@@ -951,8 +951,8 @@
 
     <!-- Hero Section -->
     <section class="hero" id="home">
-        <video class="hero-video" autoplay muted loop playsinline webkit-playsinline preload="auto">
-            <source src="Wowealth hero video.mp4" type="video/mp4">
+        <video class="hero-video" autoplay muted loop playsinline webkit-playsinline preload="auto" disablePictureInPicture controlsList="nodownload nofullscreen noremoteplayback" style="width: 100%; height: 100%;">
+            <source src="wowealth hero video.mp4" type="video/mp4">
             Your browser does not support the video tag.
         </video>
         <div class="hero-content">
