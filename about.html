@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
-    <meta name="description" content="Contact WoWealth for all your financial needs. Get in touch with our expert advisors for loans, mutual funds, and insurance solutions.">
-    <meta name="keywords" content="contact, financial services, loans, mutual funds, insurance, WoWealth">
+    <meta name="description" content="Learn about WoWealth - Your trusted financial services partner providing expert guidance in loans, mutual funds, and insurance solutions.">
+    <meta name="keywords" content="about us, financial services, loans, mutual funds, insurance, WoWealth, financial advisor">
     <meta name="author" content="WoWealth">
     
     <!-- iOS Safari Meta Tags -->
@@ -17,7 +17,7 @@
     <meta name="theme-color" content="#1e293b">
     <meta name="mobile-web-app-capable" content="yes">
     
-    <title>Contact Us - WoWealth Financial Solutions</title>
+    <title>About Us - WoWealth Financial Solutions</title>
     <link rel="icon" type="image/png" href="Wowealth logo.png">
     <link rel="apple-touch-icon" href="Wowealth logo.png">
     
@@ -325,150 +325,238 @@
             opacity: 0.9;
         }
 
-        /* Contact Section */
-        .contact-section {
+        /* About Section */
+        .about-section {
             max-width: 1200px;
             margin: 3rem auto;
             padding: 0 1rem;
         }
 
-        .contact-grid {
+        .about-content {
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 3rem;
-            margin-top: 2rem;
+            margin-bottom: 3rem;
+            align-items: center;
         }
 
-        .contact-form {
-            background: white;
-            padding: 2rem;
-            border-radius: 8px;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-        }
-
-        .form-group {
+        .about-text h2 {
+            color: var(--primary-color);
+            font-size: 2.5rem;
             margin-bottom: 1.5rem;
         }
 
-        .form-group label {
-            display: block;
-            margin-bottom: 0.5rem;
-            font-weight: 500;
-            color: var(--text-dark);
-        }
-
-        .form-group input,
-        .form-group textarea,
-        .form-group select {
-            width: 100%;
-            padding: 0.8rem;
-            border: 1px solid var(--border-color);
-            border-radius: 5px;
-            font-family: inherit;
-            font-size: 16px;
-            -webkit-appearance: none;
-            -moz-appearance: none;
-            appearance: none;
-            touch-action: manipulation;
-        }
-
-        .form-group textarea {
-            resize: vertical;
-            min-height: 120px;
-        }
-
-        .form-group input:focus,
-        .form-group textarea:focus,
-        .form-group select:focus {
-            outline: none;
-            border-color: var(--primary-color);
-            box-shadow: 0 0 0 3px rgba(30, 41, 59, 0.1);
-        }
-
-        .btn {
-            padding: 1rem 2rem;
-            font-size: 1rem;
-            font-weight: 600;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            transition: transform 0.3s, box-shadow 0.3s;
-            text-decoration: none;
-            display: inline-block;
-            -webkit-tap-highlight-color: transparent;
-            touch-action: manipulation;
-            -webkit-appearance: none;
-            -moz-appearance: none;
-            appearance: none;
-        }
-
-        .btn-primary {
-            background-color: var(--success-color);
-            color: white;
-            width: 100%;
-        }
-
-        .btn-primary:hover {
-            background-color: #059669;
-            transform: translateY(-2px);
-            box-shadow: 0 4px 12px rgba(16, 185, 129, 0.3);
-        }
-
-        .contact-info {
-            background: white;
-            padding: 2rem;
-            border-radius: 8px;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-        }
-
-        .info-item {
-            margin-bottom: 2rem;
-            padding-bottom: 2rem;
-            border-bottom: 1px solid var(--border-color);
-        }
-
-        .info-item:last-child {
-            border-bottom: none;
-            margin-bottom: 0;
-            padding-bottom: 0;
-        }
-
-        .info-item h4 {
-            color: var(--primary-color);
-            margin-bottom: 0.5rem;
-            font-size: 1.2rem;
-        }
-
-        .info-item p {
+        .about-text p {
             color: var(--text-light);
-            margin-bottom: 0.5rem;
+            font-size: 1.1rem;
+            margin-bottom: 1.5rem;
+            line-height: 1.8;
         }
 
-        /* Map Section */
-        .map-section {
-            margin-top: 3rem;
+        .about-image {
             background: var(--bg-light);
-            padding: 3rem 1rem;
+            border-radius: 8px;
+            padding: 2rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 300px;
         }
 
-        .map-container {
+        .about-image img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+        }
+
+        /* Values Section */
+        .values-section {
+            background: var(--bg-light);
+            padding: 4rem 1rem;
+            margin-top: 3rem;
+        }
+
+        .values-container {
             max-width: 1200px;
             margin: 0 auto;
         }
 
-        .map-wrapper {
-            position: relative;
-            width: 100%;
-            height: 450px;
-            border-radius: 8px;
-            overflow: hidden;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        .values-section h2 {
+            text-align: center;
+            color: var(--primary-color);
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
         }
 
-        .map-wrapper iframe {
+        .values-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+
+        .value-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 8px;
+            text-align: center;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .value-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(30, 41, 59, 0.15);
+        }
+
+        .value-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .value-card h3 {
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+            font-size: 1.5rem;
+        }
+
+        .value-card p {
+            color: var(--text-light);
+            line-height: 1.6;
+        }
+
+        /* Founders Section */
+        .founders-section {
+            max-width: 1200px;
+            margin: 3rem auto;
+            padding: 0 1rem;
+            position: relative;
+        }
+
+        .founders-section::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            width: 4px;
+            background: var(--success-color);
+        }
+
+        .founders-header {
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+            margin-bottom: 3rem;
+            padding-left: 2rem;
+        }
+
+        .founders-icon {
+            width: 60px;
+            height: 60px;
+            border: 2px solid var(--success-color);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            color: var(--success-color);
+            background: rgba(16, 185, 129, 0.1);
+        }
+
+        .founders-section h2 {
+            color: var(--primary-color);
+            font-size: 2.5rem;
+            margin: 0;
+            font-weight: 700;
+        }
+
+        .founders-list {
+            display: flex;
+            flex-direction: column;
+            gap: 0;
+            padding-left: 2rem;
+        }
+
+        .founder-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 2rem;
+            padding: 2rem 0;
+            border-bottom: 2px dotted var(--border-color);
+        }
+
+        .founder-item:last-child {
+            border-bottom: none;
+        }
+
+        .founder-image-wrapper {
+            flex-shrink: 0;
+            width: 150px;
+            height: 150px;
+        }
+
+        .founder-image {
             width: 100%;
             height: 100%;
-            border: none;
+            border-radius: 50%;
+            object-fit: cover;
+            object-position: center center;
+            border: 3px solid var(--success-color);
+            display: block;
+        }
+
+        .founder-info {
+            flex: 1;
+            padding-top: 0.5rem;
+        }
+
+        .founder-info h3 {
+            color: var(--success-color);
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+            font-weight: 700;
+        }
+
+        .founder-info .founder-title {
+            color: var(--primary-color);
+            font-size: 1rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            font-style: italic;
+        }
+
+        .founder-info p {
+            color: var(--text-light);
+            line-height: 1.8;
+            font-size: 1rem;
+        }
+
+        /* Mission Section */
+        .mission-section {
+            max-width: 1200px;
+            margin: 3rem auto;
+            padding: 0 1rem;
+        }
+
+        .mission-content {
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+            color: white;
+            padding: 3rem;
+            border-radius: 8px;
+            text-align: center;
+        }
+
+        .mission-content h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .mission-content p {
+            font-size: 1.2rem;
+            line-height: 1.8;
+            opacity: 0.95;
+            max-width: 800px;
+            margin: 0 auto;
         }
 
         /* Footer */
@@ -535,17 +623,6 @@
             }
         }
 
-        @keyframes scaleIn {
-            from {
-                opacity: 0;
-                transform: scale(0.9);
-            }
-            to {
-                opacity: 1;
-                transform: scale(1);
-            }
-        }
-
         /* Scroll-triggered animations */
         .animate-on-scroll {
             opacity: 0;
@@ -565,28 +642,6 @@
 
         .page-header p {
             animation: fadeInUp 1s ease-out 0.5s both;
-        }
-
-        .contact-form, .contact-info {
-            opacity: 0;
-            transform: translateY(30px);
-            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
-        }
-
-        .contact-form.animated, .contact-info.animated {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-        .map-wrapper {
-            opacity: 0;
-            transform: translateY(30px);
-            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
-        }
-
-        .map-wrapper.animated {
-            opacity: 1;
-            transform: translateY(0);
         }
 
         /* WhatsApp Floating Button */
@@ -632,7 +687,7 @@
 
         /* Responsive */
         @media (max-width: 768px) {
-            .contact-grid {
+            .about-content {
                 grid-template-columns: 1fr;
             }
 
@@ -649,6 +704,57 @@
 
             .page-header p {
                 font-size: 1rem;
+            }
+
+            .about-text h2 {
+                font-size: 2rem;
+            }
+
+            .mission-content {
+                padding: 2rem 1.5rem;
+            }
+
+            .mission-content h2 {
+                font-size: 2rem;
+            }
+
+            .mission-content p {
+                font-size: 1rem;
+            }
+
+            .founders-section h2 {
+                font-size: 2rem;
+            }
+
+            .founders-header {
+                padding-left: 1rem;
+                gap: 1rem;
+            }
+
+            .founders-icon {
+                width: 50px;
+                height: 50px;
+                font-size: 1.5rem;
+            }
+
+            .founders-list {
+                padding-left: 1rem;
+            }
+
+            .founder-item {
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+                gap: 1.5rem;
+            }
+
+            .founder-image-wrapper {
+                width: 120px;
+                height: 120px;
+            }
+
+            .founder-info {
+                text-align: center;
             }
 
             nav {
@@ -669,7 +775,7 @@
     <!-- Header -->
     <header>
         <div class="nav-container">
-                <a href="index.html" class="logo">
+            <a href="index.html" class="logo">
                 <img src="Wowealth logo.png" alt="Wowealth Logo">
                 <span>WoWealth</span>
             </a>
@@ -724,111 +830,110 @@
 
     <!-- Page Header -->
     <section class="page-header">
-        <h1>Contact Us</h1>
-        <p>Get in touch with our expert team for personalized financial solutions</p>
+        <h1>About Us</h1>
+        <p>Your trusted partner in financial success</p>
     </section>
 
-    <!-- Contact Section -->
-    <section class="contact-section">
-        <div class="contact-grid">
-            <!-- Contact Form -->
-            <div class="contact-form">
-                <h2 style="color: var(--primary-color); margin-bottom: 1.5rem;">Send us a Message</h2>
-                <form onsubmit="handleSubmit(event)">
-                    <div class="form-group">
-                        <label for="name">Full Name</label>
-                        <input type="text" id="name" name="name" required>
-                    </div>
-
-                    <div class="form-group">
-                        <label for="email">Email Address</label>
-                        <input type="email" id="email" name="email" required>
-                    </div>
-
-                    <div class="form-group">
-                        <label for="phone">Phone Number</label>
-                        <input type="tel" id="phone" name="phone" required>
-                    </div>
-
-                    <div class="form-group">
-                        <label for="service">Service Interest</label>
-                        <select id="service" name="service">
-                            <option value="">Select a service</option>
-                            <option value="LAP">LAP (Loan Against Property)</option>
-                            <option value="CC/OD Limits">CC/OD Limits</option>
-                            <option value="CGTMSE">CGTMSE</option>
-                            <option value="Home Loan">Home Loan</option>
-                            <option value="Auto Loan">Auto Loan</option>
-                            <option value="Business Loan">Business Loan</option>
-                            <option value="Personal Loan">Personal Loan</option>
-                            <option value="Equity Mutual Funds">Equity Mutual Funds</option>
-                            <option value="Debt Mutual Funds">Debt Mutual Funds</option>
-                            <option value="Hybrid Mutual Funds">Hybrid Mutual Funds</option>
-                            <option value="Solution Oriented Schemes">Solution Oriented Schemes</option>
-                            <option value="Other Schemes">Other Schemes</option>
-                            <option value="Life Insurance">Life Insurance</option>
-                            <option value="Health Insurance">Health Insurance</option>
-                            <option value="General Insurance">General Insurance</option>
-                        </select>
-                    </div>
-
-                    <div class="form-group">
-                        <label for="message">Message</label>
-                        <textarea id="message" name="message" placeholder="Tell us about your financial needs..."></textarea>
-                    </div>
-
-                    <button type="submit" class="btn btn-primary">Send Inquiry</button>
-                </form>
+    <!-- About Section -->
+    <section class="about-section">
+        <div class="about-content">
+            <div class="about-text">
+                <h2>Who We Are</h2>
+                <p>
+                    We are a group of professionals working toward the goal of wealth maximization for our clients. We accompany you on this journey to help your hard-earned money grow into lasting wealth. We assist you by helping you make the right choices through the unique products and services we offer. Our ultimate goal goes beyond savings, focusing on transforming them into broader horizons of prosperity.
+                </p>
             </div>
-
-            <!-- Contact Info -->
-            <div class="contact-info">
-                <h2 style="color: var(--primary-color); margin-bottom: 1.5rem;">Get in Touch</h2>
-                
-                <div class="info-item">
-                    <h4>📞 Phone</h4>
-                    <p>+91 80545 16988</p>
-                    <p style="font-size: 0.9rem; color: var(--text-light); margin-top: 0.5rem;">Mon-Sat: 9AM-7PM IST</p>
-                </div>
-
-                <div class="info-item">
-                    <h4>📧 Email</h4>
-                    <p>Sandannkgp@gmail.com</p>
-                    <p style="font-size: 0.9rem; color: var(--text-light); margin-top: 0.5rem;">Response within 2 hours</p>
-                </div>
-
-                <div class="info-item">
-                    <h4>📍 Address</h4>
-                    <p>Booth No. 45-46, 1st floor, Market</p>
-                    <p>Gumtala Sub Urban, A - Block, Ranjit Avenue</p>
-                    <p>Amritsar, Punjab 143001</p>
-                    <p style="font-size: 0.9rem; color: var(--text-light); margin-top: 0.5rem;">Visit us in person</p>
-                </div>
-
+            <div class="about-image">
+                <img src="Wowealth logo.png" alt="WoWealth Logo">
             </div>
         </div>
     </section>
 
-    <!-- Map Section -->
-    <section class="map-section">
-        <div class="map-container">
-            <h2 style="text-align: center; margin-bottom: 1rem; font-size: 2rem; color: var(--primary-color);">Find Us</h2>
-            <p style="text-align: center; color: var(--text-light); margin-bottom: 2rem;">Click on the map to view location and get directions</p>
-            
-            <div class="map-wrapper">
-                <iframe 
-                    src="https://www.google.com/maps?q=Wowealth,+Booth+No.+45-46+,+1st+floor,+Market,+Gumtala+Sub+Urban,+A+-+Block,+Ranjit+Avenue,+Amritsar,+Punjab+143001&output=embed"
-                    allowfullscreen="" 
-                    loading="lazy" 
-                    referrerpolicy="no-referrer-when-downgrade"
-                    title="WoWealth Location - Amritsar">
-                </iframe>
+    <!-- Mission Section -->
+    <section class="mission-section">
+        <div class="mission-content">
+            <h2>Our Vision</h2>
+            <p>
+                Our ultimate objective is to provide 360-degree coverage to individuals or groups associated with us through wealth creation and personal finance management. The range of products and services we offer is aligned with effective tax-saving solutions, including mutual funds, loans, and various types of insurance. Our purpose is to deliver comprehensive financial solutions under one roof.
+            </p>
+        </div>
+    </section>
+
+    <!-- Values Section -->
+    <section class="values-section">
+        <div class="values-container">
+            <h2>Our Core Values</h2>
+            <div class="values-grid">
+                <div class="value-card">
+                    <div class="value-icon">🤝</div>
+                    <h3>Trust & Integrity</h3>
+                    <p>We build relationships based on honesty, transparency, and ethical practices. Your trust is our most valuable asset.</p>
+                </div>
+                <div class="value-card">
+                    <div class="value-icon">🎯</div>
+                    <h3>Client-Centric</h3>
+                    <p>Your financial success is our priority. We listen, understand, and deliver solutions tailored to your unique needs.</p>
+                </div>
+                <div class="value-card">
+                    <div class="value-icon">💡</div>
+                    <h3>Expertise</h3>
+                    <p>Our team of certified professionals stays updated with the latest market trends and financial products to serve you better.</p>
+                </div>
+                <div class="value-card">
+                    <div class="value-icon">⚡</div>
+                    <h3>Efficiency</h3>
+                    <p>We streamline processes to ensure quick approvals, fast disbursements, and timely service delivery.</p>
+                </div>
+                <div class="value-card">
+                    <div class="value-icon">🔒</div>
+                    <h3>Security</h3>
+                    <p>Your financial data and personal information are protected with the highest standards of security and confidentiality.</p>
+                </div>
+                <div class="value-card">
+                    <div class="value-icon">📈</div>
+                    <h3>Growth</h3>
+                    <p>We are committed to continuous improvement and innovation to better serve our clients and help them grow.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Founders Section -->
+    <section class="founders-section">
+        <div class="founders-header">
+            <div class="founders-icon">👥</div>
+            <h2>Our Team</h2>
+        </div>
+        <div class="founders-list">
+            <div class="founder-item">
+                <div class="founder-image-wrapper">
+                    <img src="co founder 1.jpg" alt="CS Sandan Grover" class="founder-image">
+                </div>
+                <div class="founder-info">
+                    <h3>CS Sandan Grover</h3>
+                    <p class="founder-title">Founder</p>
+                    <p>
+                        CS Sandan Grover, is the founder of WOWEALTH and carrying on this business for past seven years with the objective of making best possible efforts to get best returns for clients. He is qualified Company Secretary holding membership of Institute of Company Secretaries of India along with the degree holder of MBA in Marketing. He with his strong ability to convert idle money into wealth have a vision to provide financial literacy and financial independence to every client.
+                    </p>
+                </div>
+            </div>
+            <div class="founder-item">
+                <div class="founder-image-wrapper">
+                    <img src="co founder 2.jpg" alt="Mr. Suman Grover" class="founder-image">
+                </div>
+                <div class="founder-info">
+                    <h3>Mr. Suman Grover</h3>
+                    <p class="founder-title">Co-Founder</p>
+                    <p>
+                        Mr. Suman Grover, a co-founder, is a retired bank official from ICICI Bank Ltd. with over 35 years of experience in the banking sector. He is a dedicated professional with extensive expertise in the area of loans and advances.
+                    </p>
+                </div>
             </div>
         </div>
     </section>
 
     <!-- WhatsApp Floating Button -->
-    <a href="https://wa.me/918054516988" class="whatsapp-float" aria-label="Chat on WhatsApp" target="_blank" rel="noopener">
+    <a href="https://wa.me/918054516988?text=Hi%20WoWealth%2C%20I%27d%20like%20to%20chat." class="whatsapp-float" aria-label="Chat on WhatsApp" target="_blank" rel="noopener">
         <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp">
     </a>
 
@@ -868,23 +973,6 @@
     </footer>
 
     <script>
-        // Form submission
-        function handleSubmit(event) {
-            event.preventDefault();
-
-            const name = document.getElementById('name').value;
-            const email = document.getElementById('email').value;
-            const phone = document.getElementById('phone').value;
-            const service = document.getElementById('service').value;
-            const message = document.getElementById('message').value;
-
-            // Show success message (in real scenario, send to backend)
-            alert(`Thank you, ${name}! Your inquiry has been received. We'll contact you on ${phone} soon.`);
-
-            // Reset form
-            event.target.reset();
-        }
-
         // Navbar scroll behavior
         let lastScroll = 0;
         const header = document.querySelector('header');
@@ -950,7 +1038,7 @@
             link.addEventListener('click', closeMobileMenu);
         });
 
-        // Close menu when clicking outside the content (Bug 2 fix)
+        // Close menu when clicking outside the content
         if (mobileMenu && mobileMenuContent) {
             mobileMenu.addEventListener('click', function(e) {
                 // Check if click is NOT on mobile-menu-content or its children
@@ -976,14 +1064,22 @@
 
         // Observe elements for animation
         document.addEventListener('DOMContentLoaded', () => {
-            const contactForm = document.querySelector('.contact-form');
-            const contactInfo = document.querySelector('.contact-info');
-            const mapWrapper = document.querySelector('.map-wrapper');
+            const aboutContent = document.querySelector('.about-content');
+            const valueCards = document.querySelectorAll('.value-card');
+            const founderCards = document.querySelectorAll('.founder-card');
+            const missionContent = document.querySelector('.mission-content');
             const sections = document.querySelectorAll('section');
             
-            if (contactForm) observer.observe(contactForm);
-            if (contactInfo) observer.observe(contactInfo);
-            if (mapWrapper) observer.observe(mapWrapper);
+            if (aboutContent) observer.observe(aboutContent);
+            if (missionContent) observer.observe(missionContent);
+            
+            valueCards.forEach(card => {
+                observer.observe(card);
+            });
+
+            founderCards.forEach(card => {
+                observer.observe(card);
+            });
 
             sections.forEach(section => {
                 if (!section.classList.contains('page-header')) {
