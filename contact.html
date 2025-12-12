@@ -920,16 +920,21 @@
         const menuToggle = document.querySelector('.menu-toggle');
         const mobileMenu = document.getElementById('mobileMenu');
         const mobileMenuClose = document.querySelector('.mobile-menu-close');
-        const mobileMenuLinks = mobileMenu.querySelectorAll('a');
+        const mobileMenuContent = document.querySelector('.mobile-menu-content');
+        const mobileMenuLinks = mobileMenu ? mobileMenu.querySelectorAll('a') : [];
 
         function openMobileMenu() {
-            mobileMenu.classList.add('active');
-            document.body.style.overflow = 'hidden';
+            if (mobileMenu) {
+                mobileMenu.classList.add('active');
+                document.body.style.overflow = 'hidden';
+            }
         }
 
         function closeMobileMenu() {
-            mobileMenu.classList.remove('active');
-            document.body.style.overflow = '';
+            if (mobileMenu) {
+                mobileMenu.classList.remove('active');
+                document.body.style.overflow = '';
+            }
         }
 
         if (menuToggle) {
@@ -945,12 +950,15 @@
             link.addEventListener('click', closeMobileMenu);
         });
 
-        // Close menu when clicking outside
-        mobileMenu.addEventListener('click', function(e) {
-            if (e.target === mobileMenu) {
-                closeMobileMenu();
-            }
-        });
+        // Close menu when clicking outside the content (Bug 2 fix)
+        if (mobileMenu && mobileMenuContent) {
+            mobileMenu.addEventListener('click', function(e) {
+                // Check if click is NOT on mobile-menu-content or its children
+                if (!mobileMenuContent.contains(e.target) && e.target !== mobileMenuClose) {
+                    closeMobileMenu();
+                }
+            });
+        }
 
         // Scroll-triggered animations
         const observerOptions = {
