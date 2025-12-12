@@ -3,21 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
-    <meta name="description" content="Comprehensive financial services including loans, mutual funds, and insurance solutions from WoWealth.">
+    <meta name="description" content="Comprehensive financial services including loans, mutual funds, and insurance solutions from Wowealth.">
     <meta name="keywords" content="loans, mutual funds, insurance, financial advisor, investment planning">
-    <meta name="author" content="WoWealth">
+    <meta name="author" content="Wowealth">
     
     <!-- iOS Safari Meta Tags -->
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <meta name="apple-mobile-web-app-title" content="WoWealth">
+    <meta name="apple-mobile-web-app-title" content="Wowealth">
     <meta name="format-detection" content="telephone=no">
     
     <!-- Android Chrome Meta Tags -->
     <meta name="theme-color" content="#1e293b">
     <meta name="mobile-web-app-capable" content="yes">
     
-    <title>Our Services - WoWealth Financial Solutions</title>
+    <title>Our Services - Wowealth Financial Solutions</title>
     <link rel="icon" type="image/png" href="Wowealth logo.png">
     <link rel="apple-touch-icon" href="Wowealth logo.png">
     
@@ -490,6 +490,7 @@
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 2rem;
             margin: 2rem 0;
+            align-items: stretch;
         }
 
         .card {
@@ -501,6 +502,9 @@
             transition: transform 0.3s, box-shadow 0.3s;
             opacity: 0;
             transform: translateY(30px);
+            display: flex;
+            flex-direction: column;
+            height: 100%;
         }
 
         .card.animated {
@@ -538,6 +542,13 @@
         .card-features {
             text-align: left;
             margin: 1.5rem 0;
+            flex-grow: 1;
+        }
+
+        .card .btn,
+        .card a.btn {
+            margin-top: auto;
+            align-self: center;
         }
 
         .card-features li {
@@ -664,14 +675,14 @@
         <div class="nav-container">
                 <a href="index.html" class="logo">
                 <img src="Wowealth logo.png" alt="Wowealth Logo">
-                <span>WoWealth</span>
+                <span>Wowealth</span>
             </a>
             <button class="menu-toggle" aria-label="Toggle menu">☰</button>
             <nav>
                 <a href="index.html">Home</a>
                 <a href="services.html">Services</a>
                 <a href="about.html">About Us</a>
-                <a href="index.html#why-us">Why Us?</a>
+                <a href="why-us.html">Why Us?</a>
                 <a href="contact.html">Contact Us</a>
                 <a href="contact.html" class="cta-button">Get Started</a>
                 <div class="nav-social">
@@ -737,7 +748,7 @@
                     <h3>LAP (Loan Against Property)</h3>
                     <p>Unlock the value of your property with flexible loan against property solutions for business and personal needs.</p>
                     <ul class="card-features">
-                        <li>Loan up to 70% of property value</li>
+                        <li>Loan up to 75% of property value</li>
                         <li>Competitive interest rates</li>
                         <li>Flexible repayment options</li>
                         <li>Quick processing and disbursement</li>
@@ -776,10 +787,9 @@
                     <h3>Home Loans</h3>
                     <p>Affordable home financing solutions with competitive interest rates and flexible repayment terms.</p>
                     <ul class="card-features">
-                        <li>Rates from 6.5% p.a.</li>
+                        <li>Rates from 7.5% p.a.</li>
                         <li>Tenure up to 30 years</li>
                         <li>Quick approval process</li>
-                        <li>Zero processing fee options</li>
                     </ul>
                     <a href="contact.html" class="btn btn-primary">Get Started</a>
                 </div>
@@ -802,7 +812,6 @@
                     <h3>Business Loans</h3>
                     <p>Comprehensive business financing solutions to fuel your business growth and expansion plans.</p>
                     <ul class="card-features">
-                        <li>Loan up to ₹50 crores</li>
                         <li>Competitive interest rates</li>
                         <li>Flexible tenure options</li>
                         <li>Minimal documentation</li>
@@ -816,7 +825,6 @@
                     <p>Quick personal loans for all your needs with minimal documentation and fast disbursement.</p>
                     <ul class="card-features">
                         <li>Loan up to ₹25 lakhs</li>
-                        <li>48-hour approval</li>
                         <li>No collateral needed</li>
                         <li>Minimal documentation</li>
                     </ul>
@@ -836,7 +844,6 @@
                         <li>Diversified portfolio</li>
                         <li>Tax-efficient investing</li>
                         <li>Professional management</li>
-                        <li>Low-cost options</li>
                     </ul>
                     <a href="contact.html" class="btn btn-primary">Start Investing</a>
                 </div>
@@ -880,18 +887,6 @@
                     <a href="contact.html" class="btn btn-primary">Start Investing</a>
                 </div>
 
-                <div class="card">
-                    <div class="card-icon">📦</div>
-                    <h3>Other Schemes</h3>
-                    <p>Specialized mutual fund schemes including index funds, ETFs, and sector-specific funds for diversified portfolios.</p>
-                    <ul class="card-features">
-                        <li>Index funds & ETFs</li>
-                        <li>Sector-specific funds</li>
-                        <li>International funds</li>
-                        <li>Flexible investment options</li>
-                    </ul>
-                    <a href="contact.html" class="btn btn-primary">Start Investing</a>
-                </div>
             </div>
         </div>
 
@@ -904,7 +899,7 @@
                     <p>Comprehensive life insurance plans to protect your family's financial future with flexible options.</p>
                     <ul class="card-features">
                         <li>Term & whole life plans</li>
-                        <li>Coverage up to 1 crore</li>
+                        <li>Coverage up to 5 crores</li>
                         <li>Quick claim settlement</li>
                         <li>Affordable premiums</li>
                     </ul>
@@ -932,7 +927,6 @@
                         <li>Vehicle insurance</li>
                         <li>Home insurance</li>
                         <li>Travel insurance</li>
-                        <li>24/7 support</li>
                     </ul>
                     <a href="contact.html" class="btn btn-primary">Contact Us</a>
                 </div>
@@ -976,7 +970,7 @@
         </div>
 
         <div class="footer-bottom">
-            <p>&copy; 2025 WoWealth. All rights reserved. | Privacy Policy | Terms of Service</p>
+            <p>&copy; 2025 Wowealth. All rights reserved. | Privacy Policy | Terms of Service</p>
         </div>
     </footer>
 
