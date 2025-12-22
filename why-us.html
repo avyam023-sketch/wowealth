@@ -455,32 +455,115 @@
 
         /* Stats Section */
         .stats-section {
-            max-width: 1200px;
-            margin: 3rem auto;
-            padding: 0 1rem;
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+            padding: 5rem 1.5rem;
+            margin: 4rem 0;
+            position: relative;
+            overflow: hidden;
         }
 
-        .stats-grid {
+        .stats-video {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
+            z-index: 0;
+            pointer-events: none;
+            opacity: 0.3;
+        }
+
+        .stats-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(15, 23, 42, 0.6);
+            z-index: 1;
+        }
+
+        .stats-container {
+            max-width: 1200px;
+            margin: 0 auto;
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 2rem;
-            text-align: center;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 3rem;
+            position: relative;
+            z-index: 2;
         }
 
         .stat-item {
+            text-align: center;
             padding: 2rem;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 12px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
 
-        .stat-number {
-            font-size: 3rem;
-            font-weight: bold;
-            color: var(--success-color);
+        .stat-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            background: rgba(255, 255, 255, 0.08);
+        }
+
+        .stat-number-wrapper {
+            display: flex;
+            align-items: baseline;
+            justify-content: center;
             margin-bottom: 0.5rem;
         }
 
+        .stat-number {
+            font-size: 4rem;
+            font-weight: 700;
+            color: var(--success-color);
+            line-height: 1;
+            display: inline-block;
+        }
+
+        .stat-symbol {
+            font-size: 4rem;
+            font-weight: 700;
+            color: var(--success-color);
+            display: inline-block;
+            margin-left: -0.2rem;
+        }
+
         .stat-label {
-            color: var(--text-light);
-            font-size: 1.1rem;
+            font-size: 1.2rem;
+            color: rgba(255, 255, 255, 0.9);
+            font-weight: 500;
+            margin-top: 0.5rem;
+        }
+
+        @media (max-width: 768px) {
+            .stats-section {
+                padding: 3rem 1rem;
+                margin: 3rem 0;
+            }
+
+            .stats-container {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .stat-number {
+                font-size: 3rem;
+            }
+
+            .stat-symbol {
+                font-size: 3rem;
+            }
+
+            .stat-label {
+                font-size: 1rem;
+            }
         }
 
         /* Founders Message Section */
@@ -907,17 +990,28 @@
 
     <!-- Stats Section -->
     <section class="stats-section">
-        <div class="stats-grid">
+        <video class="stats-video" autoplay muted loop playsinline webkit-playsinline preload="auto">
+            <source src="assets/stats.mp4" type="video/mp4">
+            <source src="assets/stats.MP4" type="video/mp4">
+        </video>
+        <div class="stats-container">
             <div class="stat-item">
-                <div class="stat-number">7+</div>
+                <div class="stat-number-wrapper">
+                    <span class="stat-number" data-target="7" data-suffix="+">0</span>
+                </div>
                 <div class="stat-label">Years of Experience</div>
             </div>
             <div class="stat-item">
-                <div class="stat-number">1000+</div>
+                <div class="stat-number-wrapper">
+                    <span class="stat-number" data-target="1000" data-suffix="+">0</span>
+                </div>
                 <div class="stat-label">Happy Clients</div>
             </div>
             <div class="stat-item">
-                <div class="stat-number">360°</div>
+                <div class="stat-number-wrapper">
+                    <span class="stat-number" data-target="360">0</span>
+                    <span class="stat-symbol">°</span>
+                </div>
                 <div class="stat-label">Financial Coverage</div>
             </div>
         </div>
@@ -954,8 +1048,8 @@
 
             <div class="footer-section">
                 <h4>Services</h4>
-                <a href="services.html#loans">Loans</a>
-                <a href="services.html#mutual-funds">Mutual Funds</a>
+                <a href="services.html#loans">Loan</a>
+                <a href="services.html#mutual-funds">Mutual Fund</a>
                 <a href="services.html#insurance">Insurance</a>
             </div>
 
@@ -1101,6 +1195,63 @@
                 foundersMessageSection.classList.add('animate-on-scroll');
                 observer.observe(foundersMessageSection);
             }
+        });
+
+        // Stats Count-Up Animation
+        function animateCounter(element, target, suffix = '', duration = 2000) {
+            let start = 0;
+            const increment = target / (duration / 16); // 60fps
+            const timer = setInterval(() => {
+                start += increment;
+                if (start >= target) {
+                    element.textContent = target + suffix;
+                    clearInterval(timer);
+                } else {
+                    element.textContent = Math.floor(start) + suffix;
+                }
+            }, 16);
+        }
+
+        // Initialize stats animation when DOM is ready
+        document.addEventListener('DOMContentLoaded', function() {
+            const statsSection = document.querySelector('.stats-section');
+            if (!statsSection) return;
+
+            // Check if already animated
+            if (statsSection.classList.contains('stats-animated')) return;
+
+            // Intersection Observer for stats animation
+            const statsObserver = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('stats-animated');
+                        const statItems = entry.target.querySelectorAll('.stat-item');
+                        
+                        statItems.forEach(item => {
+                            const numberElement = item.querySelector('.stat-number');
+                            if (numberElement) {
+                                const target = parseInt(numberElement.getAttribute('data-target'));
+                                const suffix = numberElement.getAttribute('data-suffix') || '';
+                                
+                                // Reset to 0
+                                numberElement.textContent = '0' + suffix;
+                                
+                                // Start animation
+                                animateCounter(numberElement, target, suffix);
+                            }
+                        });
+                        
+                        // Stop observing after animation starts
+                        statsObserver.unobserve(entry.target);
+                    }
+                });
+            }, {
+                threshold: 0.3,
+                rootMargin: '0px'
+            });
+
+            // Start observing
+            statsObserver.observe(statsSection);
         });
     </script>
 </body>
