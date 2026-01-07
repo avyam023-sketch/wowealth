@@ -6,8 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Financial services including loans, mutual funds, and insurance. Get expert guidance for your financial goals.">
     <meta name="keywords" content="loans, mutual funds, insurance, financial advisor, investment planning">
-    <meta name="author" content="Wowealth">
-    <title>Wowealth - Financial Solutions | Loans, Mutual Funds & Insurance</title>
+    <meta name="author" content="WoWealth">
+    <title>WoWealth - Financial Solutions | Loans, Mutual Funds & Insurance</title>
+    <link rel="canonical" href="https://www.wowealth.in/">
     <link rel="icon" type="image/png" href="Wowealth logo.png">
     
     <!-- Schema Markup for Local SEO -->
@@ -115,22 +116,33 @@
         /* Mobile Menu Toggle Button */
         .menu-toggle {
             display: none;
-            background: none;
-            border: none;
-            color: inherit;
+            background: rgba(255, 255, 255, 0.9);
+            border: 2px solid currentColor;
+            border-radius: 4px;
+            color: var(--primary-color);
             font-size: 1.8rem;
             cursor: pointer;
-            padding: 0.5rem;
-            transition: opacity 0.3s ease;
+            padding: 0.5rem 0.75rem;
+            transition: opacity 0.3s ease, background 0.3s ease;
             z-index: 1001;
-            position: relative;
             min-width: 44px;
             min-height: 44px;
             -webkit-tap-highlight-color: transparent;
         }
 
         .menu-toggle:hover {
-            opacity: 0.8;
+            opacity: 0.9;
+            background: rgba(255, 255, 255, 1);
+        }
+
+        header.over-hero .menu-toggle {
+            background: rgba(255, 255, 255, 0.2);
+            border-color: white;
+            color: white;
+        }
+
+        header.over-hero .menu-toggle:hover {
+            background: rgba(255, 255, 255, 0.3);
         }
 
         /* Mobile Menu Overlay */
@@ -155,6 +167,7 @@
         .mobile-menu.active {
             opacity: 1;
             visibility: visible;
+            display: block;
         }
 
         .mobile-menu-content {
@@ -366,11 +379,6 @@
             object-fit: cover;
             object-position: center;
             z-index: 0;
-            pointer-events: none;
-            -webkit-transform: translateZ(0);
-            transform: translateZ(0);
-            -webkit-backface-visibility: hidden;
-            backface-visibility: hidden;
         }
 
         .hero::before {
@@ -789,6 +797,161 @@
             box-shadow: 0 0 0 3px rgba(30, 41, 59, 0.1);
         }
 
+        /* Collaborations Section */
+        .collaborations-section {
+            padding: 4rem 1rem;
+            background: white;
+            margin-top: 3rem;
+        }
+
+        .collaborations-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .collaborations-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .collaborations-header h2 {
+            font-size: 2.5rem;
+            color: var(--primary-color);
+            margin-bottom: 0.5rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .collaborations-header p {
+            color: var(--text-light);
+            font-size: 1.1rem;
+        }
+
+        .partners-carousel {
+            position: relative;
+            overflow: hidden;
+            padding: 2rem 0;
+            margin: 0 4rem;
+        }
+
+        .partners-track {
+            display: flex;
+            transition: transform 0.8s ease-in-out;
+            gap: 3rem;
+            align-items: center;
+            will-change: transform;
+        }
+
+        .partner-item {
+            flex: 0 0 auto;
+            width: 180px;
+            height: 120px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 1.5rem;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .partner-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);
+        }
+
+        .partner-item img {
+            max-width: 100%;
+            max-height: 100%;
+            width: auto;
+            height: auto;
+            object-fit: contain;
+            filter: grayscale(100%);
+            opacity: 0.7;
+            transition: filter 0.3s ease, opacity 0.3s ease;
+        }
+
+        .partner-item:hover img {
+            filter: grayscale(0%);
+            opacity: 1;
+        }
+
+        .carousel-nav {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: white;
+            border: 2px solid var(--border-color);
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            z-index: 10;
+            transition: all 0.3s ease;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .carousel-nav:hover {
+            background: var(--primary-color);
+            border-color: var(--primary-color);
+            transform: translateY(-50%) scale(1.1);
+        }
+
+        .carousel-nav:hover svg {
+            fill: white;
+        }
+
+        .carousel-nav.prev {
+            left: -25px;
+        }
+
+        .carousel-nav.next {
+            right: -25px;
+        }
+
+        .carousel-nav svg {
+            width: 24px;
+            height: 24px;
+            fill: var(--primary-color);
+            transition: fill 0.3s ease;
+        }
+
+        @media (max-width: 768px) {
+            .partners-carousel {
+                margin: 0 2rem;
+            }
+
+            .carousel-nav {
+                width: 40px;
+                height: 40px;
+            }
+
+            .carousel-nav.prev {
+                left: -20px;
+            }
+
+            .carousel-nav.next {
+                right: -20px;
+            }
+
+            .partner-item {
+                width: 150px;
+                height: 100px;
+            }
+
+            .partners-track {
+                gap: 2rem;
+            }
+
+            .collaborations-header h2 {
+                font-size: 2rem;
+            }
+        }
+
         /* Footer */
         footer {
             background: var(--text-dark);
@@ -834,10 +997,6 @@
         @media (max-width: 768px) {
             .hero {
                 padding: 5rem 1.25rem;
-                min-height: 100vh;
-                min-height: 100dvh;
-                overflow: hidden;
-                position: relative;
             }
 
             .hero h1 {
@@ -851,12 +1010,6 @@
             .hero-video {
                 width: 100%;
                 height: 100%;
-                min-width: 100%;
-                min-height: 100%;
-                object-fit: cover;
-                object-position: center center;
-                -webkit-transform: translateZ(0) scale(1.1);
-                transform: translateZ(0) scale(1.1);
             }
 
             nav {
@@ -893,260 +1046,6 @@
                 display: none;
             }
         }
-
-        /* Additional mobile video fixes */
-        @media (max-width: 480px) {
-            .hero {
-                min-height: 100vh;
-                min-height: 100dvh;
-            }
-
-            .hero-video {
-                -webkit-transform: translateZ(0) scale(1.2);
-                transform: translateZ(0) scale(1.2);
-            }
-        }
-
-        /* Prevent video from causing horizontal scroll */
-        .hero {
-            overflow-x: hidden;
-            overflow-y: hidden;
-        }
-
-        /* Ensure video doesn't break layout on orientation change */
-        @media (orientation: landscape) and (max-height: 500px) {
-            .hero {
-                min-height: 100vh;
-                min-height: 100dvh;
-            }
-
-            .hero-video {
-                object-fit: cover;
-                object-position: center;
-            }
-        }
-
-        /* Video Section Styles */
-        .video-section {
-            margin-top: 4rem;
-            margin-bottom: 4rem;
-        }
-
-        .video-container {
-            position: relative;
-            width: 100%;
-            max-width: 280px;
-            margin: 0 auto;
-            border-radius: 12px;
-            overflow: hidden;
-            background: #000;
-            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
-        }
-
-        .video-thumbnail-wrapper {
-            position: relative;
-            width: 100%;
-            max-width: 100%;
-            margin: 0 auto;
-            padding-bottom: 150%; /* 2:3 vertical/portrait aspect ratio */
-            background: #000;
-            border: none;
-            cursor: pointer;
-            overflow: hidden;
-            display: block;
-        }
-
-        .video-thumbnail {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            object-fit: contain;
-            object-position: center;
-            transition: transform 0.3s ease;
-            transform: scale(0.9);
-        }
-
-        .video-thumbnail-wrapper:hover .video-thumbnail {
-            transform: scale(0.95);
-        }
-
-        .play-button-overlay {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            width: 80px;
-            height: 80px;
-            background: rgba(0, 0, 0, 0.6);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            transition: all 0.3s ease;
-            backdrop-filter: blur(4px);
-        }
-
-        .video-thumbnail-wrapper:hover .play-button-overlay {
-            background: rgba(0, 0, 0, 0.8);
-            transform: translate(-50%, -50%) scale(1.1);
-        }
-
-        .play-icon {
-            width: 40px;
-            height: 40px;
-            margin-left: 4px; /* Slight offset for visual centering */
-        }
-
-        .lazy-video {
-            width: 100%;
-            height: auto;
-            display: block;
-            border-radius: 12px;
-            aspect-ratio: 16 / 9;
-            object-fit: contain;
-            background: #000;
-        }
-
-        @media (max-width: 768px) {
-            .video-section {
-                margin-top: 3rem;
-                margin-bottom: 3rem;
-                padding: 0 1rem;
-            }
-
-            .video-section h2 {
-                font-size: 1.8rem;
-            }
-
-            .video-container {
-                max-width: 180px;
-            }
-
-            .play-button-overlay {
-                width: 64px;
-                height: 64px;
-            }
-
-            .play-icon {
-                width: 32px;
-                height: 32px;
-            }
-        }
-
-        /* Stats Section */
-        .stats-section {
-            background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
-            padding: 5rem 1.5rem;
-            margin: 4rem 0;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .stats-video {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            object-position: center;
-            z-index: 0;
-            pointer-events: none;
-            opacity: 0.3;
-        }
-
-        .stats-section::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: rgba(15, 23, 42, 0.6);
-            z-index: 1;
-        }
-
-        .stats-container {
-            max-width: 1200px;
-            margin: 0 auto;
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 3rem;
-            position: relative;
-            z-index: 2;
-        }
-
-        .stat-item {
-            text-align: center;
-            padding: 2rem;
-            background: rgba(255, 255, 255, 0.05);
-            border-radius: 12px;
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-
-        .stat-item:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
-            background: rgba(255, 255, 255, 0.08);
-        }
-
-        .stat-number-wrapper {
-            display: flex;
-            align-items: baseline;
-            justify-content: center;
-            margin-bottom: 0.5rem;
-        }
-
-        .stat-number {
-            font-size: 4rem;
-            font-weight: 700;
-            color: var(--success-color);
-            line-height: 1;
-            display: inline-block;
-        }
-
-        .stat-symbol {
-            font-size: 4rem;
-            font-weight: 700;
-            color: var(--success-color);
-            display: inline-block;
-            margin-left: -0.2rem;
-        }
-
-        .stat-label {
-            font-size: 1.2rem;
-            color: rgba(255, 255, 255, 0.9);
-            font-weight: 500;
-            margin-top: 0.5rem;
-        }
-
-        @media (max-width: 768px) {
-            .stats-section {
-                padding: 3rem 1rem;
-                margin: 3rem 0;
-            }
-
-            .stats-container {
-                grid-template-columns: 1fr;
-                gap: 2rem;
-            }
-
-            .stat-number {
-                font-size: 3rem;
-            }
-
-            .stat-symbol {
-                font-size: 3rem;
-            }
-
-            .stat-label {
-                font-size: 1rem;
-            }
-        }
     </style>
 </head>
 <body>
@@ -1155,14 +1054,14 @@
         <div class="nav-container">
             <a href="index.html" class="logo">
                 <img src="Wowealth logo.png" alt="Wowealth Logo">
-                <span>Wowealth</span>
+                <span>WoWealth</span>
             </a>
             <button class="menu-toggle" aria-label="Toggle menu">☰</button>
             <nav>
                 <a href="index.html#home">Home</a>
                 <a href="services.html">Services</a>
                 <a href="about.html">About Us</a>
-                <a href="why-us.html">Why Us?</a>
+                <a href="#why-us">Why Us?</a>
                 <a href="contact.html">Contact Us</a>
                 <a href="contact.html" class="cta-button">Get Started</a>
                 <div class="nav-social">
@@ -1188,7 +1087,7 @@
             <a href="index.html#home">Home</a>
             <a href="services.html">Services</a>
             <a href="about.html">About Us</a>
-            <a href="why-us.html">Why Us?</a>
+            <a href="#why-us">Why Us?</a>
             <a href="contact.html">Contact Us</a>
             <a href="contact.html" class="cta-button">Get Started</a>
             <div class="nav-social">
@@ -1208,31 +1107,16 @@
 
     <!-- Hero Section -->
     <section class="hero" id="home">
-        <video class="hero-video" autoplay muted loop playsinline webkit-playsinline preload="auto" disablePictureInPicture controlsList="nodownload nofullscreen noremoteplayback" style="width: 100%; height: 100%;">
+        <video class="hero-video" autoplay muted loop playsinline webkit-playsinline preload="auto">
             <source src="wowealth hero video.mp4" type="video/mp4">
             Your browser does not support the video tag.
         </video>
         <div class="hero-content">
             <h1>Your Financial Success Starts Here</h1>
-            <p>Expert guidance in Loans, Mutual Funds, and Insurance to help you achieve your financial goals</p>
+            <p>Expert guidance in loans, mutual funds, and insurance to help you achieve your financial goals</p>
             <div class="hero-buttons">
                 <a href="services.html" class="btn btn-primary">Explore Services</a>
             </div>
-        </div>
-    </section>
-
-    <!-- Unreleased Clip Video Section -->
-    <section class="video-section" style="max-width: 1200px; margin: 4rem auto; padding: 0 1.5rem;">
-        <h2 style="text-align: center; margin-bottom: 2rem; font-size: 2.5rem; color: var(--primary-color);">Unreleased Clip: Our Founder on a Leading YouTuber's Podcast</h2>
-        <div class="video-container" id="videoContainer">
-            <button class="video-thumbnail-wrapper" id="videoThumbnail" aria-label="Play video">
-                <img src="" alt="Video thumbnail" class="video-thumbnail" id="videoThumbnailImg">
-                <div class="play-button-overlay">
-                    <svg class="play-icon" viewBox="0 0 24 24" fill="white">
-                        <path d="M8 5v14l11-7z"/>
-                    </svg>
-                </div>
-            </button>
         </div>
     </section>
 
@@ -1240,32 +1124,32 @@
     <section id="services" style="max-width: 1200px; margin: 3rem auto; padding: 0 1rem;">
         <h2 style="text-align: center; margin-bottom: 2rem; font-size: 2.5rem; color: var(--primary-color);">Our Services</h2>
         <p style="text-align: center; color: var(--text-light); margin-bottom: 3rem; font-size: 1.1rem; max-width: 700px; margin-left: auto; margin-right: auto;">
-            We offer comprehensive financial solutions to help you achieve your goals. Explore our range of Services designed to meet your unique needs.
+            We offer comprehensive financial solutions to help you achieve your goals. Explore our range of services designed to meet your unique needs.
         </p>
         
         <div class="service-cards">
             <div class="card">
                 <div class="card-icon">🏦</div>
-                <h3>Loan</h3>
+                <h3>Loans</h3>
                 <p>Flexible loan solutions including home loans, auto loans, and personal loans with competitive rates and quick approvals.</p>
                 <ul class="card-features">
-                    <li>Home Loan</li>
-                    <li>Auto Loan</li>
-                    <li>Personal Loan</li>
+                    <li>Home Loans</li>
+                    <li>Auto Loans</li>
+                    <li>Personal Loans</li>
                 </ul>
                 <a href="services.html#loans" class="btn btn-primary">Learn More</a>
             </div>
 
             <div class="card">
                 <div class="card-icon">📈</div>
-                <h3>Mutual Fund</h3>
+                <h3>Mutual Funds</h3>
                 <p>Expert investment guidance with equity, debt, and balanced mutual funds to help grow your wealth.</p>
                 <ul class="card-features">
-                    <li>Equity Fund</li>
-                    <li>Debt Fund</li>
-                    <li>Hybrid Mutual Fund</li>
-                    <li>Solution Oriented Scheme</li>
-                    <li>Other Scheme</li>
+                    <li>Equity Funds</li>
+                    <li>Debt Funds</li>
+                    <li>Hybrid Mutual Funds</li>
+                    <li>Solution Oriented Schemes</li>
+                    <li>Other Schemes</li>
                 </ul>
                 <a href="services.html#mutual-funds" class="btn btn-primary">Start Investing</a>
             </div>
@@ -1284,39 +1168,10 @@
         </div>
     </section>
 
-    <!-- Stats Section -->
-    <section class="stats-section">
-        <video class="stats-video" autoplay muted loop playsinline webkit-playsinline preload="auto">
-            <source src="assets/stats.mp4" type="video/mp4">
-            <source src="assets/stats.MP4" type="video/mp4">
-        </video>
-        <div class="stats-container">
-            <div class="stat-item">
-                <div class="stat-number-wrapper">
-                    <span class="stat-number" data-target="7" data-suffix="+">0</span>
-                </div>
-                <div class="stat-label">Years of Experience</div>
-            </div>
-            <div class="stat-item">
-                <div class="stat-number-wrapper">
-                    <span class="stat-number" data-target="1000" data-suffix="+">0</span>
-                </div>
-                <div class="stat-label">Happy Clients</div>
-            </div>
-            <div class="stat-item">
-                <div class="stat-number-wrapper">
-                    <span class="stat-number" data-target="360">0</span>
-                    <span class="stat-symbol">°</span>
-                </div>
-                <div class="stat-label">Financial Coverage</div>
-            </div>
-        </div>
-    </section>
-
     <!-- Why Us Section -->
     <section id="why-us" style="background: var(--bg-light); padding: 4rem 1rem; margin-top: 3rem;">
         <div style="max-width: 1200px; margin: 0 auto;">
-            <h2 style="text-align: center; margin-bottom: 1rem; font-size: 2.5rem; color: var(--primary-color);">Why Choose Wowealth?</h2>
+            <h2 style="text-align: center; margin-bottom: 1rem; font-size: 2.5rem; color: var(--primary-color);">Why Choose WoWealth?</h2>
             <p style="text-align: center; color: var(--text-light); margin-bottom: 3rem; font-size: 1.1rem; max-width: 700px; margin-left: auto; margin-right: auto;">
                 We are committed to providing exceptional financial solutions with personalized service and expert guidance.
             </p>
@@ -1355,6 +1210,90 @@
         </div>
     </section>
 
+    <!-- Our Collaborations Section -->
+    <section class="collaborations-section">
+        <div class="collaborations-container">
+            <div class="collaborations-header">
+                <h2>OUR COLLABORATIONS</h2>
+                <p>Trusted Partners</p>
+            </div>
+            <div class="partners-carousel">
+                <button class="carousel-nav prev" aria-label="Previous partners">
+                    <svg viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"/>
+                    </svg>
+                </button>
+                <div class="partners-track" id="partnersTrack">
+                    <div class="partner-item">
+                        <img src="assets/partners/1619892967_quant.png" alt="Quant Mutual Fund">
+                    </div>
+                    <div class="partner-item">
+                        <img src="assets/partners/20220321175241.jpg" alt="Partner">
+                    </div>
+                    <div class="partner-item">
+                        <img src="assets/partners/axis.png" alt="Axis Bank">
+                    </div>
+                    <div class="partner-item">
+                        <img src="assets/partners/bajaj_amc_1.png" alt="Bajaj AMC">
+                    </div>
+                    <div class="partner-item">
+                        <img src="assets/partners/canara-robeco-value-fund-completes-three-years-gave-23-returns-since-inception.avif" alt="Canara Robeco">
+                    </div>
+                    <div class="partner-item">
+                        <img src="assets/partners/care logo.png" alt="CARE">
+                    </div>
+                    <div class="partner-item">
+                        <img src="assets/partners/channels4_profile.jpg" alt="Partner">
+                    </div>
+                    <div class="partner-item">
+                        <img src="assets/partners/dspmf_logo.png" alt="DSP Mutual Fund">
+                    </div>
+                    <div class="partner-item">
+                        <img src="assets/partners/fund-news-icici-pru__w660__.webp" alt="ICICI Prudential">
+                    </div>
+                    <div class="partner-item">
+                        <img src="assets/partners/images.png" alt="Partner">
+                    </div>
+                    <div class="partner-item">
+                        <img src="assets/partners/kotak.png" alt="Kotak">
+                    </div>
+                    <div class="partner-item">
+                        <img src="assets/partners/MHNDR.png" alt="Partner">
+                    </div>
+                    <div class="partner-item">
+                        <img src="assets/partners/motilal_oswal.png" alt="Motilal Oswal">
+                    </div>
+                    <div class="partner-item">
+                        <img src="assets/partners/nfo-alert-hdfc-mutual-fund-launches-innovation-themed-fund.avif" alt="HDFC Mutual Fund">
+                    </div>
+                    <div class="partner-item">
+                        <img src="assets/partners/png-clipart-logo-brand-public-relations-product-icici-lombard-travel-insurance-text-public-relations-removebg-preview.png" alt="ICICI Lombard">
+                    </div>
+                    <div class="partner-item">
+                        <img src="assets/partners/PPFAS.png" alt="PPFAS">
+                    </div>
+                    <div class="partner-item">
+                        <img src="assets/partners/Rectangle-346.jpg" alt="Partner">
+                    </div>
+                    <div class="partner-item">
+                        <img src="assets/partners/SNDRM.png" alt="Partner">
+                    </div>
+                    <div class="partner-item">
+                        <img src="assets/partners/Star_Health_and_Allied_Insurance.svg.png" alt="Star Health Insurance">
+                    </div>
+                    <div class="partner-item">
+                        <img src="assets/partners/UTI-International-Logo-01.jpg" alt="UTI Mutual Fund">
+                    </div>
+                </div>
+                <button class="carousel-nav next" aria-label="Next partners">
+                    <svg viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/>
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </section>
+
     <!-- Contact Section -->
     <section class="contact-section" id="contact">
         <div class="contact-content">
@@ -1383,26 +1322,17 @@
                         <label for="service">Service Interest</label>
                         <select id="service" name="service" style="width: 100%; padding: 0.8rem; border: 1px solid var(--border-color); border-radius: 5px; font-size: 1rem;">
                             <option value="">Select a service</option>
-                            <optgroup label="Loan">
-                                <option value="LAP (Loan Against Property)">LAP (Loan Against Property)</option>
-                                <option value="CC/OD Limits">CC/OD Limits</option>
-                                <option value="CGTMSE">CGTMSE</option>
-                                <option value="Home Loan">Home Loan</option>
-                                <option value="Auto Loan">Auto Loan</option>
-                                <option value="Business Loan">Business Loan</option>
-                                <option value="Personal Loan">Personal Loan</option>
-                            </optgroup>
-                            <optgroup label="Mutual Fund">
-                                <option value="Equity Mutual Fund">Equity Mutual Fund</option>
-                                <option value="Debt Mutual Fund">Debt Mutual Fund</option>
-                                <option value="Hybrid Mutual Fund">Hybrid Mutual Fund</option>
-                                <option value="Solution Oriented Scheme">Solution Oriented Scheme</option>
-                            </optgroup>
-                            <optgroup label="Insurance">
-                                <option value="Life Insurance">Life Insurance</option>
-                                <option value="Health Insurance">Health Insurance</option>
-                                <option value="General Insurance">General Insurance</option>
-                            </optgroup>
+                            <option value="Home Loan">Home Loan</option>
+                            <option value="Auto Loan">Auto Loan</option>
+                            <option value="Personal Loan">Personal Loan</option>
+                            <option value="Equity Mutual Funds">Equity Mutual Funds</option>
+                            <option value="Debt Mutual Funds">Debt Mutual Funds</option>
+                            <option value="Hybrid Mutual Funds">Hybrid Mutual Funds</option>
+                            <option value="Solution Oriented Schemes">Solution Oriented Schemes</option>
+                            <option value="Other Schemes">Other Schemes</option>
+                            <option value="Life Insurance">Life Insurance</option>
+                            <option value="Health Insurance">Health Insurance</option>
+                            <option value="General Insurance">General Insurance</option>
                         </select>
                     </div>
 
@@ -1432,8 +1362,8 @@
 
             <div class="footer-section">
                 <h4>Services</h4>
-                <a href="services.html#loans">Loan</a>
-                <a href="services.html#mutual-funds">Mutual Fund</a>
+                <a href="services.html#loans">Loans</a>
+                <a href="services.html#mutual-funds">Mutual Funds</a>
                 <a href="services.html#insurance">Insurance</a>
             </div>
 
@@ -1453,7 +1383,7 @@
         </div>
 
         <div class="footer-bottom">
-            <p>&copy; 2025 Wowealth. All rights reserved. | Privacy Policy | Terms of Service</p>
+            <p>&copy; 2025 WoWealth. All rights reserved. | Privacy Policy | Terms of Service</p>
         </div>
     </footer>
 
@@ -1503,43 +1433,27 @@
             heroVideo.setAttribute('playsinline', '');
             heroVideo.setAttribute('webkit-playsinline', '');
             heroVideo.muted = true;
-            heroVideo.setAttribute('muted', 'true');
-            
-            // Prevent video controls on mobile
-            heroVideo.controls = false;
-            
-            // Optimize video loading for mobile
-            if (window.innerWidth <= 768) {
-                heroVideo.preload = 'metadata';
-            }
             
             // Function to play video
             function playVideo() {
-                if (heroVideo.readyState >= 2) { // HAVE_CURRENT_DATA
-                    const playPromise = heroVideo.play();
-                    if (playPromise !== undefined) {
-                        playPromise.catch(function(error) {
-                            console.log('Video autoplay prevented:', error);
-                            // Try again after user interaction
-                            const playOnInteraction = function() {
-                                heroVideo.play().catch(() => {});
-                                document.removeEventListener('touchstart', playOnInteraction);
-                                document.removeEventListener('click', playOnInteraction);
-                            };
-                            document.addEventListener('touchstart', playOnInteraction, { once: true });
-                            document.addEventListener('click', playOnInteraction, { once: true });
-                        });
-                    }
+                const playPromise = heroVideo.play();
+                if (playPromise !== undefined) {
+                    playPromise.catch(function(error) {
+                        console.log('Video autoplay prevented:', error);
+                        // Try again after user interaction
+                        document.addEventListener('touchstart', function playOnTouch() {
+                            heroVideo.play().catch(() => {});
+                            document.removeEventListener('touchstart', playOnTouch);
+                        }, { once: true });
+                    });
                 }
             }
 
+            // Try to play immediately
+            playVideo();
+
             // Ensure video plays when metadata is loaded
             heroVideo.addEventListener('loadedmetadata', function() {
-                playVideo();
-            });
-
-            // Ensure video plays when it can play
-            heroVideo.addEventListener('canplay', function() {
                 playVideo();
             });
 
@@ -1556,7 +1470,7 @@
 
             // Fallback: Try to play on window load
             window.addEventListener('load', function() {
-                setTimeout(playVideo, 100);
+                playVideo();
             });
 
             // Handle visibility change (when user switches tabs)
@@ -1564,15 +1478,6 @@
                 if (!document.hidden && heroVideo.paused) {
                     playVideo();
                 }
-            });
-
-            // Handle orientation change on mobile
-            window.addEventListener('orientationchange', function() {
-                setTimeout(function() {
-                    heroVideo.style.width = '100%';
-                    heroVideo.style.height = '100%';
-                    playVideo();
-                }, 100);
             });
         }
 
@@ -1694,283 +1599,148 @@
             });
         });
 
-        // Fix thumbnail image path on page load - run immediately, not waiting for DOMContentLoaded
-        (function() {
-            function setThumbnailPath() {
-                const thumbnailImg = document.getElementById('videoThumbnailImg') || document.querySelector('#videoThumbnail img');
-                if (!thumbnailImg) {
-                    // If element doesn't exist yet, try again after a short delay
-                    setTimeout(setThumbnailPath, 50);
-                    return;
-                }
-                
-                // Get the correct base path for file:// protocol
-                let thumbnailPath;
-                if (window.location.protocol === 'file:') {
-                    // For file:// protocol on Windows, handle the path correctly
-                    let currentFile = window.location.href;
-                    // Remove file:/// prefix if present
-                    if (currentFile.startsWith('file:///')) {
-                        currentFile = currentFile.substring(8); // Remove 'file:///'
-                    } else if (currentFile.startsWith('file://')) {
-                        currentFile = currentFile.substring(7); // Remove 'file://'
-                    }
-                    // Get directory path
-                    const lastSlash = currentFile.lastIndexOf('/');
-                    const fileDir = lastSlash >= 0 ? currentFile.substring(0, lastSlash + 1) : './';
-                    thumbnailPath = 'file:///' + fileDir + 'assets/hero section video thumbnail.jpeg';
-                } else {
-                    // For http:// protocol, use relative path
-                    thumbnailPath = './assets/hero section video thumbnail.jpeg';
-                }
-                thumbnailImg.src = thumbnailPath;
-                console.log('Thumbnail path set to:', thumbnailPath);
-                console.log('Current location:', window.location.href);
-                
-                // Add error handler as fallback
-                thumbnailImg.onerror = function() {
-                    console.error('Failed to load thumbnail, trying alternative paths');
-                    if (window.location.protocol === 'file:') {
-                        let currentFile = window.location.href;
-                        if (currentFile.startsWith('file:///')) {
-                            currentFile = currentFile.substring(8);
-                        } else if (currentFile.startsWith('file://')) {
-                            currentFile = currentFile.substring(7);
-                        }
-                        const lastSlash = currentFile.lastIndexOf('/');
-                        const fileDir = lastSlash >= 0 ? currentFile.substring(0, lastSlash + 1) : './';
-                        // Try encoded version
-                        this.src = 'file:///' + fileDir + 'assets/hero%20section%20video%20thumbnail.jpeg';
-                    } else {
-                        this.src = './assets/hero%20section%20video%20thumbnail.jpeg';
-                    }
-                };
-            }
+        // Partners Carousel Functionality
+        document.addEventListener('DOMContentLoaded', () => {
+            const track = document.getElementById('partnersTrack');
+            const prevBtn = document.querySelector('.carousel-nav.prev');
+            const nextBtn = document.querySelector('.carousel-nav.next');
             
-            // Try immediately, and also on DOMContentLoaded
-            if (document.readyState === 'loading') {
-                document.addEventListener('DOMContentLoaded', setThumbnailPath);
-            } else {
-                setThumbnailPath();
-            }
-        })();
+            if (!track || !prevBtn || !nextBtn) return;
 
-        // Lazy-load video functionality
-        document.addEventListener('DOMContentLoaded', function() {
-            const videoThumbnail = document.getElementById('videoThumbnail');
-            const videoContainer = document.getElementById('videoContainer');
+            const partners = Array.from(track.querySelectorAll('.partner-item'));
+            if (partners.length === 0) return;
 
-            if (videoThumbnail && videoContainer) {
-                // Check if video is already loaded
-                let videoLoaded = false;
-
-                videoThumbnail.addEventListener('click', function() {
-                    // Prevent multiple clicks
-                    if (videoLoaded) return;
-                    videoLoaded = true;
-
-                    // Hide thumbnail immediately
-                    videoThumbnail.style.display = 'none';
-
-                    // Create video element
-                    const video = document.createElement('video');
-                    video.className = 'lazy-video';
-                    video.controls = true;
-                    video.autoplay = true;
-                    video.playsInline = true;
-                    video.setAttribute('playsinline', '');
-                    video.setAttribute('webkit-playsinline', '');
-                    video.setAttribute('muted', 'false');
-                    video.preload = 'auto';
-                    // Set poster with proper path handling
-                    let posterPath;
-                    let videoPath;
-                    
-                    if (window.location.protocol === 'file:') {
-                        // For file:// protocol on Windows, handle the path correctly
-                        let currentFile = window.location.href;
-                        // Remove file:/// prefix if present
-                        if (currentFile.startsWith('file:///')) {
-                            currentFile = currentFile.substring(8); // Remove 'file:///'
-                        } else if (currentFile.startsWith('file://')) {
-                            currentFile = currentFile.substring(7); // Remove 'file://'
-                        }
-                        // Get directory path
-                        const lastSlash = currentFile.lastIndexOf('/');
-                        const fileDir = lastSlash >= 0 ? currentFile.substring(0, lastSlash + 1) : './';
-                        posterPath = 'file:///' + fileDir + 'assets/hero section video thumbnail.jpeg';
-                        videoPath = 'file:///' + fileDir + 'assets/wowealth home page video.MP4';
-                    } else {
-                        // For http:// protocol, use relative path
-                        posterPath = './assets/hero section video thumbnail.jpeg';
-                        videoPath = './assets/wowealth home page video.MP4';
-                    }
-                    
-                    video.poster = posterPath;
-                    video.style.width = '100%';
-                    video.style.height = 'auto';
-                    video.style.display = 'block';
-                    video.style.background = '#000';
-
-                    // Create source element with full path
-                    const source = document.createElement('source');
-                    source.src = videoPath;
-                    source.type = 'video/mp4';
-                    video.appendChild(source);
-                    
-                    // Also add URL-encoded version as fallback (for spaces)
-                    const sourceEncoded = document.createElement('source');
-                    sourceEncoded.src = videoPath.replace(/ /g, '%20');
-                    sourceEncoded.type = 'video/mp4';
-                    video.appendChild(sourceEncoded);
-                    
-                    console.log('Loading video from:', videoPath);
-                    console.log('Poster path:', posterPath);
-
-                    // Replace thumbnail with video
-                    videoContainer.innerHTML = '';
-                    videoContainer.appendChild(video);
-
-                    // Function to attempt playing the video
-                    function attemptPlay() {
-                        if (video.paused && video.readyState >= 2) {
-                            const playPromise = video.play();
-                            if (playPromise !== undefined) {
-                                playPromise.then(function() {
-                                    console.log('Video is playing successfully');
-                                    video.muted = false; // Unmute after play starts
-                                }).catch(function(error) {
-                                    console.log('Video autoplay prevented:', error);
-                                    // Show user they can click play
-                                    video.controls = true;
-                                });
-                            }
-                        }
-                    }
-
-                    // Try to play when metadata is loaded
-                    video.addEventListener('loadedmetadata', function() {
-                        console.log('Video metadata loaded');
-                        attemptPlay();
-                    });
-                    
-                    // Try when video can start playing
-                    video.addEventListener('canplay', function() {
-                        console.log('Video can play');
-                        attemptPlay();
-                    });
-
-                    // Try when enough data is loaded
-                    video.addEventListener('canplaythrough', function() {
-                        console.log('Video can play through');
-                        attemptPlay();
-                    });
-
-                    // Handle video errors with detailed logging
-                    video.addEventListener('error', function(e) {
-                        console.error('Video error occurred:', e);
-                        if (video.error) {
-                            console.error('Video error code:', video.error.code);
-                            console.error('Video error message:', video.error.message);
-                            
-                            let errorMsg = 'Unable to load video. ';
-                            switch(video.error.code) {
-                                case 1: // MEDIA_ERR_ABORTED
-                                    errorMsg += 'Loading was aborted.';
-                                    break;
-                                case 2: // MEDIA_ERR_NETWORK
-                                    errorMsg += 'Network error occurred.';
-                                    break;
-                                case 3: // MEDIA_ERR_DECODE
-                                    errorMsg += 'Video decoding error.';
-                                    break;
-                                case 4: // MEDIA_ERR_SRC_NOT_SUPPORTED
-                                    errorMsg += 'Video source not supported or file not found.';
-                                    console.error('Attempted paths:', videoPaths);
-                                    break;
-                            }
-                            
-                            // Show error message to user
-                            const errorDiv = document.createElement('div');
-                            errorDiv.style.cssText = 'padding: 2rem; text-align: center; color: #ef4444; background: #fee; border-radius: 8px;';
-                            errorDiv.innerHTML = '<p>' + errorMsg + '</p><p>Please check the video file path.</p>';
-                            videoContainer.appendChild(errorDiv);
-                        }
-                    });
-
-                    // Handle successful load
-                    video.addEventListener('loadeddata', function() {
-                        console.log('Video data loaded');
-                    });
-
-                    // Load the video
-                    video.load();
-
-                    // Fallback: try to play after a short delay
-                    setTimeout(function() {
-                        if (video.readyState >= 2 && video.paused) {
-                            attemptPlay();
-                        }
-                    }, 500);
-                });
-            }
-        });
-
-        // Stats Count-Up Animation
-        function animateCounter(element, target, suffix = '', duration = 2000) {
-            let start = 0;
-            const increment = target / (duration / 16); // 60fps
-            const timer = setInterval(() => {
-                start += increment;
-                if (start >= target) {
-                    element.textContent = target + suffix;
-                    clearInterval(timer);
-                } else {
-                    element.textContent = Math.floor(start) + suffix;
-                }
-            }, 16);
-        }
-
-        // Initialize stats animation when DOM is ready
-        document.addEventListener('DOMContentLoaded', function() {
-            const statsSection = document.querySelector('.stats-section');
-            if (!statsSection) return;
-
-            // Check if already animated
-            if (statsSection.classList.contains('stats-animated')) return;
-
-            // Intersection Observer for stats animation
-            const statsObserver = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        entry.target.classList.add('stats-animated');
-                        const statItems = entry.target.querySelectorAll('.stat-item');
-                        
-                        statItems.forEach(item => {
-                            const numberElement = item.querySelector('.stat-number');
-                            if (numberElement) {
-                                const target = parseInt(numberElement.getAttribute('data-target'));
-                                const suffix = numberElement.getAttribute('data-suffix') || '';
-                                
-                                // Reset to 0
-                                numberElement.textContent = '0' + suffix;
-                                
-                                // Start animation
-                                animateCounter(numberElement, target, suffix);
-                            }
-                        });
-                        
-                        // Stop observing after animation starts
-                        statsObserver.unobserve(entry.target);
-                    }
-                });
-            }, {
-                threshold: 0.3,
-                rootMargin: '0px'
+            // Clone items for seamless infinite scroll
+            partners.forEach(partner => {
+                const clone = partner.cloneNode(true);
+                track.appendChild(clone);
             });
 
-            // Start observing
-            statsObserver.observe(statsSection);
+            let currentIndex = 0;
+            let isTransitioning = false;
+            const scrollSpeed = 3000; // 3 seconds like reference
+            let autoScrollInterval;
+
+            function getItemWidth() {
+                if (partners.length === 0) return 0;
+                const firstItem = partners[0];
+                const width = firstItem.offsetWidth;
+                const gap = parseInt(window.getComputedStyle(track).gap) || 48;
+                return width + gap;
+            }
+
+            function updateCarousel(smooth = true) {
+                if (isTransitioning && smooth) return;
+                
+                const itemWidth = getItemWidth();
+                const translateX = -currentIndex * itemWidth;
+                
+                if (!smooth) {
+                    track.style.transition = 'none';
+                } else {
+                    track.style.transition = 'transform 0.8s ease-in-out';
+                }
+                
+                track.style.transform = `translateX(${translateX}px)`;
+            }
+
+            function nextSlide() {
+                if (isTransitioning) return;
+                
+                isTransitioning = true;
+                currentIndex++;
+                
+                // If we've scrolled past all original items, reset seamlessly
+                if (currentIndex >= partners.length) {
+                    setTimeout(() => {
+                        track.style.transition = 'none';
+                        currentIndex = 0;
+                        updateCarousel(false);
+                        setTimeout(() => {
+                            isTransitioning = false;
+                        }, 50);
+                    }, 800);
+                } else {
+                    updateCarousel();
+                    setTimeout(() => {
+                        isTransitioning = false;
+                    }, 800);
+                }
+            }
+
+            function prevSlide() {
+                if (isTransitioning) return;
+                
+                isTransitioning = true;
+                currentIndex--;
+                
+                // If we've scrolled before the start, jump to end
+                if (currentIndex < 0) {
+                    currentIndex = partners.length - 1;
+                    track.style.transition = 'none';
+                    updateCarousel(false);
+                    setTimeout(() => {
+                        track.style.transition = 'transform 0.8s ease-in-out';
+                        isTransitioning = false;
+                    }, 50);
+                } else {
+                    updateCarousel();
+                    setTimeout(() => {
+                        isTransitioning = false;
+                    }, 800);
+                }
+            }
+
+            function startAutoScroll() {
+                if (autoScrollInterval) {
+                    clearInterval(autoScrollInterval);
+                }
+                autoScrollInterval = setInterval(nextSlide, scrollSpeed);
+            }
+
+            function stopAutoScroll() {
+                if (autoScrollInterval) {
+                    clearInterval(autoScrollInterval);
+                }
+            }
+
+            // Button event listeners
+            nextBtn.addEventListener('click', () => {
+                stopAutoScroll();
+                nextSlide();
+                startAutoScroll();
+            });
+            
+            prevBtn.addEventListener('click', () => {
+                stopAutoScroll();
+                prevSlide();
+                startAutoScroll();
+            });
+
+            // Auto-scroll functionality
+            startAutoScroll();
+
+            // Pause on hover
+            const carousel = document.querySelector('.partners-carousel');
+            if (carousel) {
+                carousel.addEventListener('mouseenter', stopAutoScroll);
+                carousel.addEventListener('mouseleave', startAutoScroll);
+            }
+
+            // Handle window resize
+            let resizeTimeout;
+            window.addEventListener('resize', () => {
+                clearTimeout(resizeTimeout);
+                resizeTimeout = setTimeout(() => {
+                    updateCarousel(false);
+                }, 250);
+            });
+
+            // Initialize
+            updateCarousel(false);
+            setTimeout(() => {
+                track.style.transition = 'transform 0.8s ease-in-out';
+            }, 100);
         });
     </script>
 </body>

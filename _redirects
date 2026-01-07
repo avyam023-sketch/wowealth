@@ -1,0 +1,8 @@
+# Redirect /home to root (fixes Google search issue)
+/home / 301
+/home/ / 301
+
+# Redirect index.html to root for cleaner URLs
+/index.html / 301
+/index / 301
+

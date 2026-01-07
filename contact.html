@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
-    <meta name="description" content="Contact Wowealth for all your financial needs. Get in touch with our expert advisors for loans, mutual funds, and insurance solutions.">
-    <meta name="keywords" content="contact, financial services, loans, mutual funds, insurance, Wowealth">
+    <meta name="description" content="Contact Wowealth for expert financial guidance in loans, mutual funds, and insurance solutions. Get in touch with our financial advisors today.">
+    <meta name="keywords" content="contact, financial services, loans, mutual funds, insurance, Wowealth, financial advisor">
     <meta name="author" content="Wowealth">
     
     <!-- iOS Safari Meta Tags -->
@@ -121,6 +121,55 @@
             align-items: center;
         }
 
+        .nav-social {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        .nav-social a {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            color: inherit;
+            transition: opacity 0.3s ease, color 0.3s ease-in-out;
+        }
+
+        .nav-social a:hover {
+            opacity: 0.8;
+        }
+
+        .nav-social svg {
+            width: 22px;
+            height: 22px;
+            fill: currentColor;
+        }
+
+        nav a {
+            color: var(--primary-color);
+            text-decoration: none;
+            font-weight: 500;
+            transition: opacity 0.3s ease, color 0.3s ease-in-out;
+        }
+
+        nav a:hover {
+            opacity: 0.8;
+        }
+
+        .cta-button {
+            background-color: var(--success-color);
+            color: white;
+            padding: 0.5rem 1.5rem;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: background-color 0.3s ease;
+        }
+
+        .cta-button:hover {
+            background-color: #059669;
+        }
+
         /* Mobile Menu Toggle Button */
         .menu-toggle {
             display: none;
@@ -224,78 +273,22 @@
             fill: white;
         }
 
-        .nav-social {
-            display: flex;
-            align-items: center;
-            gap: 0.75rem;
-        }
-
-        .nav-social a {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            color: inherit;
-            transition: opacity 0.3s ease, color 0.3s ease-in-out;
-        }
-
-        .nav-social a:hover {
-            opacity: 0.8;
-        }
-
-        .nav-social svg {
-            width: 22px;
-            height: 22px;
-            fill: currentColor;
-        }
-
-        nav a {
-            color: var(--primary-color);
-            text-decoration: none;
-            font-weight: 500;
-            transition: opacity 0.3s ease, color 0.3s ease-in-out;
-            -webkit-tap-highlight-color: rgba(0, 0, 0, 0.1);
-            touch-action: manipulation;
-        }
-
-        nav a:hover {
-            opacity: 0.8;
-        }
-
-        nav a:active {
-            opacity: 0.7;
-        }
-
-        .cta-button {
-            background-color: var(--success-color);
-            color: white;
-            padding: 0.5rem 1.5rem;
-            border-radius: 5px;
-            text-decoration: none;
-            font-weight: 600;
-            transition: background-color 0.3s ease;
-        }
-
-        .cta-button:hover {
-            background-color: #059669;
-        }
-
         /* Page Header */
         .page-header {
             position: relative;
             background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
             background-image: url('contact us hero image.png');
-            background-size: 70%;
+            background-size: cover;
             background-position: center;
             background-repeat: no-repeat;
             color: white;
             padding: 7rem 1.5rem;
             text-align: center;
             overflow: hidden;
-            min-height: 100vh;
+            min-height: 50vh;
             display: flex;
             align-items: center;
             justify-content: center;
-            flex-direction: column;
         }
 
         .page-header::before {
@@ -305,7 +298,7 @@
             left: 0;
             right: 0;
             bottom: 0;
-            background: rgba(15, 23, 42, 0.3);
+            background: rgba(15, 23, 42, 0.5);
             z-index: 1;
         }
 
@@ -327,23 +320,46 @@
 
         /* Contact Section */
         .contact-section {
+            background: linear-gradient(135deg, var(--bg-light) 0%, #ffffff 100%);
+            padding: 4rem 1rem;
+            margin-top: 0;
+        }
+
+        .contact-section h2 {
+            font-size: 1.8rem;
+            color: var(--primary-color);
+            margin-bottom: 1.5rem;
+        }
+
+        .contact-content {
             max-width: 1200px;
-            margin: 3rem auto;
-            padding: 0 1rem;
+            margin: 0 auto;
         }
 
         .contact-grid {
             display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 3rem;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
             margin-top: 2rem;
         }
 
-        .contact-form {
+        .contact-info {
+            padding: 1.5rem;
             background: white;
-            padding: 2rem;
             border-radius: 8px;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            border-left: 4px solid var(--primary-color);
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+        }
+
+        .contact-info h4 {
+            color: var(--primary-color);
+            margin-bottom: 0.5rem;
+            font-size: 1.2rem;
+        }
+
+        .contact-info p {
+            color: var(--text-light);
+            margin-bottom: 0.5rem;
         }
 
         .form-group {
@@ -365,11 +381,14 @@
             border: 1px solid var(--border-color);
             border-radius: 5px;
             font-family: inherit;
-            font-size: 16px;
-            -webkit-appearance: none;
-            -moz-appearance: none;
-            appearance: none;
-            touch-action: manipulation;
+            font-size: 1rem;
+            transition: border-color 0.3s ease, box-shadow 0.3s ease, transform 0.2s ease;
+        }
+
+        .form-group input:hover,
+        .form-group textarea:hover,
+        .form-group select:hover {
+            transform: translateY(-1px);
         }
 
         .form-group textarea {
@@ -395,17 +414,11 @@
             transition: transform 0.3s, box-shadow 0.3s;
             text-decoration: none;
             display: inline-block;
-            -webkit-tap-highlight-color: transparent;
-            touch-action: manipulation;
-            -webkit-appearance: none;
-            -moz-appearance: none;
-            appearance: none;
         }
 
         .btn-primary {
             background-color: var(--success-color);
             color: white;
-            width: 100%;
         }
 
         .btn-primary:hover {
@@ -414,61 +427,31 @@
             box-shadow: 0 4px 12px rgba(16, 185, 129, 0.3);
         }
 
-        .contact-info {
-            background: white;
-            padding: 2rem;
-            border-radius: 8px;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        /* WhatsApp Floating Button */
+        .whatsapp-float {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            width: 56px;
+            height: 56px;
+            border-radius: 50%;
+            background: #25D366;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+            z-index: 1200;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
         }
 
-        .info-item {
-            margin-bottom: 2rem;
-            padding-bottom: 2rem;
-            border-bottom: 1px solid var(--border-color);
+        .whatsapp-float:hover {
+            transform: translateY(-2px) scale(1.05);
+            box-shadow: 0 6px 16px rgba(0, 0, 0, 0.25);
         }
 
-        .info-item:last-child {
-            border-bottom: none;
-            margin-bottom: 0;
-            padding-bottom: 0;
-        }
-
-        .info-item h4 {
-            color: var(--primary-color);
-            margin-bottom: 0.5rem;
-            font-size: 1.2rem;
-        }
-
-        .info-item p {
-            color: var(--text-light);
-            margin-bottom: 0.5rem;
-        }
-
-        /* Map Section */
-        .map-section {
-            margin-top: 3rem;
-            background: var(--bg-light);
-            padding: 3rem 1rem;
-        }
-
-        .map-container {
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        .map-wrapper {
-            position: relative;
-            width: 100%;
-            height: 450px;
-            border-radius: 8px;
-            overflow: hidden;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-        }
-
-        .map-wrapper iframe {
-            width: 100%;
-            height: 100%;
-            border: none;
+        .whatsapp-float img {
+            width: 30px;
+            height: 30px;
         }
 
         /* Footer */
@@ -512,135 +495,11 @@
             color: #999;
         }
 
-        /* Animations */
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        @keyframes fadeInDown {
-            from {
-                opacity: 0;
-                transform: translateY(-30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        @keyframes scaleIn {
-            from {
-                opacity: 0;
-                transform: scale(0.9);
-            }
-            to {
-                opacity: 1;
-                transform: scale(1);
-            }
-        }
-
-        /* Scroll-triggered animations */
-        .animate-on-scroll {
-            opacity: 0;
-            transform: translateY(30px);
-            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
-        }
-
-        .animate-on-scroll.animated {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-        /* Page header animations */
-        .page-header h1 {
-            animation: fadeInDown 1s ease-out 0.3s both;
-        }
-
-        .page-header p {
-            animation: fadeInUp 1s ease-out 0.5s both;
-        }
-
-        .contact-form, .contact-info {
-            opacity: 0;
-            transform: translateY(30px);
-            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
-        }
-
-        .contact-form.animated, .contact-info.animated {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-        .map-wrapper {
-            opacity: 0;
-            transform: translateY(30px);
-            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
-        }
-
-        .map-wrapper.animated {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-        /* WhatsApp Floating Button */
-        .whatsapp-float {
-            position: fixed;
-            bottom: 20px;
-            right: 20px;
-            width: 56px;
-            height: 56px;
-            border-radius: 50%;
-            background: #25D366;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-            z-index: 1200;
-            transition: transform 0.2s ease, box-shadow 0.2s ease;
-        }
-
-        .whatsapp-float:hover {
-            transform: translateY(-2px) scale(1.05);
-            box-shadow: 0 6px 16px rgba(0, 0, 0, 0.25);
-        }
-
-        .whatsapp-float img {
-            width: 30px;
-            height: 30px;
-        }
-
-        @media (max-width: 768px) {
-            .whatsapp-float {
-                width: 50px;
-                height: 50px;
-                bottom: 16px;
-                right: 16px;
-            }
-
-            .whatsapp-float img {
-                width: 26px;
-                height: 26px;
-            }
-        }
-
         /* Responsive */
         @media (max-width: 768px) {
-            .contact-grid {
-                grid-template-columns: 1fr;
-            }
-
             .page-header {
                 padding: 4.5rem 1.25rem;
-                min-height: 70vh;
-                background-size: 70%;
-                background-position: center;
+                min-height: 40vh;
             }
 
             .page-header h1 {
@@ -662,6 +521,27 @@
             .mobile-menu {
                 display: block;
             }
+
+            .whatsapp-float {
+                width: 50px;
+                height: 50px;
+                bottom: 16px;
+                right: 16px;
+            }
+
+            .whatsapp-float img {
+                width: 26px;
+                height: 26px;
+            }
+
+            .contact-section > div:first-child {
+                grid-template-columns: 1fr !important;
+                gap: 2rem !important;
+            }
+
+            .contact-section iframe {
+                height: 300px !important;
+            }
         }
     </style>
 </head>
@@ -669,7 +549,7 @@
     <!-- Header -->
     <header>
         <div class="nav-container">
-                <a href="index.html" class="logo">
+            <a href="index.html" class="logo">
                 <img src="Wowealth logo.png" alt="Wowealth Logo">
                 <span>Wowealth</span>
             </a>
@@ -730,31 +610,31 @@
 
     <!-- Contact Section -->
     <section class="contact-section">
-        <div class="contact-grid">
-            <!-- Contact Form -->
-            <div class="contact-form">
-                <h2 style="color: var(--primary-color); margin-bottom: 1.5rem;">Send us a Message</h2>
-                <form onsubmit="handleSubmit(event)">
-                    <div class="form-group">
-                        <label for="name">Full Name</label>
-                        <input type="text" id="name" name="name" required>
-                    </div>
+        <div class="contact-content">
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; max-width: 1200px; margin: 0 auto;">
+                <!-- Contact Form -->
+                <div>
+                    <h2 style="margin-bottom: 1.5rem; color: var(--primary-color); font-size: 1.8rem;">Send us a Message</h2>
+                    <form onsubmit="handleSubmit(event)">
+                        <div class="form-group">
+                            <label for="name">Full Name</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
 
-                    <div class="form-group">
-                        <label for="email">Email Address</label>
-                        <input type="email" id="email" name="email" required>
-                    </div>
+                        <div class="form-group">
+                            <label for="email">Email Address</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
 
-                    <div class="form-group">
-                        <label for="phone">Phone Number</label>
-                        <input type="tel" id="phone" name="phone" required>
-                    </div>
+                        <div class="form-group">
+                            <label for="phone">Phone Number</label>
+                            <input type="tel" id="phone" name="phone" required>
+                        </div>
 
-                    <div class="form-group">
-                        <label for="service">Service Interest</label>
-                        <select id="service" name="service">
-                            <option value="">Select a service</option>
-                            <optgroup label="Loan">
+                        <div class="form-group">
+                            <label for="service">Service Interest</label>
+                            <select id="service" name="service">
+                                <option value="">Select a service</option>
                                 <option value="LAP (Loan Against Property)">LAP (Loan Against Property)</option>
                                 <option value="CC/OD Limits">CC/OD Limits</option>
                                 <option value="CGTMSE">CGTMSE</option>
@@ -762,78 +642,70 @@
                                 <option value="Auto Loan">Auto Loan</option>
                                 <option value="Business Loan">Business Loan</option>
                                 <option value="Personal Loan">Personal Loan</option>
-                            </optgroup>
-                            <optgroup label="Mutual Fund">
                                 <option value="Equity Mutual Fund">Equity Mutual Fund</option>
                                 <option value="Debt Mutual Fund">Debt Mutual Fund</option>
                                 <option value="Hybrid Mutual Fund">Hybrid Mutual Fund</option>
                                 <option value="Solution Oriented Scheme">Solution Oriented Scheme</option>
-                            </optgroup>
-                            <optgroup label="Insurance">
                                 <option value="Life Insurance">Life Insurance</option>
                                 <option value="Health Insurance">Health Insurance</option>
                                 <option value="General Insurance">General Insurance</option>
-                            </optgroup>
-                        </select>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="message">Message</label>
+                            <textarea id="message" name="message" placeholder="Tell us about your financial needs..."></textarea>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary" style="width: 100%;">Send Inquiry</button>
+                    </form>
+                </div>
+
+                <!-- Contact Information -->
+                <div>
+                    <h2 style="margin-bottom: 1.5rem; color: var(--primary-color); font-size: 1.8rem;">Get in Touch</h2>
+                    <div class="contact-info" style="margin-bottom: 2rem;">
+                        <h4 style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.5rem;">📞 Phone</h4>
+                        <p style="font-size: 1.1rem; font-weight: 600; margin-bottom: 0.25rem;"><a href="tel:+918054516988" style="color: var(--primary-color); text-decoration: none;">+91 80545 16988</a></p>
+                        <p style="color: var(--text-light); font-size: 0.9rem;">Mon-Sat: 9AM-7PM IST</p>
                     </div>
-
-                    <div class="form-group">
-                        <label for="message">Message</label>
-                        <textarea id="message" name="message" placeholder="Tell us about your financial needs..."></textarea>
+                    <div class="contact-info" style="margin-bottom: 2rem;">
+                        <h4 style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.5rem;">📧 Email</h4>
+                        <p style="font-size: 1.1rem; font-weight: 600; margin-bottom: 0.25rem;"><a href="mailto:Sandannkgp@gmail.com" style="color: var(--primary-color); text-decoration: none;">Sandannkgp@gmail.com</a></p>
+                        <p style="color: var(--text-light); font-size: 0.9rem;">Response within 24 hours</p>
                     </div>
-
-                    <button type="submit" class="btn btn-primary">Send Inquiry</button>
-                </form>
+                    <div class="contact-info">
+                        <h4 style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.5rem;">📍 Address</h4>
+                        <p style="margin-bottom: 0.25rem;">Booth No. 45-46, 1st floor, Market</p>
+                        <p style="margin-bottom: 0.25rem;">Gumtala Sub Urban, A - Block, Ranjit Avenue</p>
+                        <p style="margin-bottom: 0.25rem;">Amritsar, Punjab 143001</p>
+                        <p style="color: var(--text-light); font-size: 0.9rem;">Visit us in person</p>
+                    </div>
+                </div>
             </div>
-
-            <!-- Contact Info -->
-            <div class="contact-info">
-                <h2 style="color: var(--primary-color); margin-bottom: 1.5rem;">Get in Touch</h2>
-                
-                <div class="info-item">
-                    <h4>📞 Phone</h4>
-                    <p>+91 80545 16988</p>
-                    <p style="font-size: 0.9rem; color: var(--text-light); margin-top: 0.5rem;">Mon-Sat: 9AM-7PM IST</p>
-                </div>
-
-                <div class="info-item">
-                    <h4>📧 Email</h4>
-                    <p>Sandannkgp@gmail.com</p>
-                    <p style="font-size: 0.9rem; color: var(--text-light); margin-top: 0.5rem;">Response within 2 hours</p>
-                </div>
-
-                <div class="info-item">
-                    <h4>📍 Address</h4>
-                    <p>Booth No. 45-46, 1st floor, Market</p>
-                    <p>Gumtala Sub Urban, A - Block, Ranjit Avenue</p>
-                    <p>Amritsar, Punjab 143001</p>
-                    <p style="font-size: 0.9rem; color: var(--text-light); margin-top: 0.5rem;">Visit us in person</p>
-                </div>
-
-            </div>
-        </div>
-    </section>
-
-    <!-- Map Section -->
-    <section class="map-section">
-        <div class="map-container">
-            <h2 style="text-align: center; margin-bottom: 1rem; font-size: 2rem; color: var(--primary-color);">Find Us</h2>
-            <p style="text-align: center; color: var(--text-light); margin-bottom: 2rem;">Click on the map to view location and get directions</p>
             
-            <div class="map-wrapper">
-                <iframe 
-                    src="https://www.google.com/maps?q=Wowealth,+Booth+No.+45-46+,+1st+floor,+Market,+Gumtala+Sub+Urban,+A+-+Block,+Ranjit+Avenue,+Amritsar,+Punjab+143001&output=embed"
-                    allowfullscreen="" 
-                    loading="lazy" 
-                    referrerpolicy="no-referrer-when-downgrade"
-                    title="Wowealth Location - Amritsar">
-                </iframe>
+            <!-- Find Us Section -->
+            <div style="max-width: 1200px; margin: 3rem auto 0; padding: 0 1rem;">
+                <h2 style="text-align: center; margin-bottom: 1rem; font-size: 2rem; color: var(--primary-color);">Find Us</h2>
+                <p style="text-align: center; color: var(--text-light); margin-bottom: 2rem;">Click on the map to view location and get directions</p>
+                <div style="width: 100%; height: 400px; border-radius: 8px; overflow: hidden; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);">
+                    <iframe 
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3376.1234567890123!2d74.8747604!3d31.6340503!2m3!1f0!2f0!3f0!3m2!1f1024!2f768!4f13.1!3m3!1m2!1s0x391964bae5a0b8b3%3A0x4e0e4b8b4b4b4b4b!2sRanjit%20Avenue%2C%20Amritsar%2C%20Punjab%20143001!5e0!3m2!1sen!2sin!4v1234567890123!5m2!1sen!2sin" 
+                        width="100%" 
+                        height="100%" 
+                        style="border:0;" 
+                        allowfullscreen="" 
+                        loading="lazy" 
+                        referrerpolicy="no-referrer-when-downgrade"
+                        title="Wowealth Location Map">
+                    </iframe>
+                </div>
             </div>
         </div>
     </section>
 
     <!-- WhatsApp Floating Button -->
-    <a href="https://wa.me/918054516988" class="whatsapp-float" aria-label="Chat on WhatsApp" target="_blank" rel="noopener">
+    <a href="https://wa.me/918054516988?text=Hi%2C%20I%27d%20like%20to%20chat%20about%20my%20personalized%20financial%20solution" class="whatsapp-float" aria-label="Chat on WhatsApp" target="_blank" rel="noopener">
         <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp">
     </a>
 
@@ -847,8 +719,8 @@
 
             <div class="footer-section">
                 <h4>Services</h4>
-                <a href="services.html#loans">Loan</a>
-                <a href="services.html#mutual-funds">Mutual Fund</a>
+                <a href="services.html#loans">Loans</a>
+                <a href="services.html#mutual-funds">Mutual Funds</a>
                 <a href="services.html#insurance">Insurance</a>
             </div>
 
@@ -893,31 +765,28 @@
         // Navbar scroll behavior
         let lastScroll = 0;
         const header = document.querySelector('header');
-        const topSection = document.querySelector('.page-header') || document.querySelector('.hero');
+        const topSection = document.querySelector('.page-header');
 
         function updateNavbar() {
             const currentScroll = window.pageYOffset;
             const topHeight = topSection ? topSection.offsetHeight : 0;
 
             if (currentScroll < topHeight) {
-                // Over the top banner: force show + white text
                 header.classList.add('over-hero');
                 header.classList.remove('hidden');
             } else {
-                // Past the banner: normal color and scroll-based hide/show
                 header.classList.remove('over-hero');
 
                 if (currentScroll > lastScroll && !header.classList.contains('hidden')) {
-                    header.classList.add('hidden'); // scrolling down
+                    header.classList.add('hidden');
                 } else if (currentScroll < lastScroll) {
-                    header.classList.remove('hidden'); // scrolling up
+                    header.classList.remove('hidden');
                 }
             }
 
             lastScroll = currentScroll;
         }
 
-        // Initial state
         updateNavbar();
         window.addEventListener('scroll', updateNavbar);
 
@@ -950,54 +819,18 @@
             mobileMenuClose.addEventListener('click', closeMobileMenu);
         }
 
-        // Close menu when clicking on a link
         mobileMenuLinks.forEach(link => {
             link.addEventListener('click', closeMobileMenu);
         });
 
-        // Close menu when clicking outside the content (Bug 2 fix)
         if (mobileMenu && mobileMenuContent) {
             mobileMenu.addEventListener('click', function(e) {
-                // Check if click is NOT on mobile-menu-content or its children
                 if (!mobileMenuContent.contains(e.target) && e.target !== mobileMenuClose) {
                     closeMobileMenu();
                 }
             });
         }
 
-        // Scroll-triggered animations
-        const observerOptions = {
-            threshold: 0.1,
-            rootMargin: '0px 0px -50px 0px'
-        };
-
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('animated');
-                }
-            });
-        }, observerOptions);
-
-        // Observe elements for animation
-        document.addEventListener('DOMContentLoaded', () => {
-            const contactForm = document.querySelector('.contact-form');
-            const contactInfo = document.querySelector('.contact-info');
-            const mapWrapper = document.querySelector('.map-wrapper');
-            const sections = document.querySelectorAll('section');
-            
-            if (contactForm) observer.observe(contactForm);
-            if (contactInfo) observer.observe(contactInfo);
-            if (mapWrapper) observer.observe(mapWrapper);
-
-            sections.forEach(section => {
-                if (!section.classList.contains('page-header')) {
-                    section.classList.add('animate-on-scroll');
-                    observer.observe(section);
-                }
-            });
-        });
     </script>
 </body>
 </html>
-
